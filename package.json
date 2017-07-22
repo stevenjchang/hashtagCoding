@@ -1,0 +1,26 @@
+{
+  "name": "hashtagcoding",
+  "version": "1.0.0",
+  "description": "Learn Code with Friends",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HashtagCoding/hashtagCoding.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "node",
+    "nodejs",
+    "express"
+  ],
+  "author": "stevenjchang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HashtagCoding/hashtagCoding/issues"
+  },
+  "homepage": "https://github.com/HashtagCoding/hashtagCoding#readme"
+}
