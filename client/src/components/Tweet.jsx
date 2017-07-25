@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Tweet = ({something}) => {
+const Tweet = ({image}) => {
   return (
     <div>
       <h1>Title</h1>
-      <p>props: {something}</p>
+      <img src={image} />
     </div>
   )
   

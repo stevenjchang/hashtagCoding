@@ -11,10 +11,9 @@ class TweetList extends React.Component {
     
     return (
       <div>
-        {tweetArray.map((item) => 
-          <Tweet something={item} /> 
+        {this.props.images.map((image, i) => 
+          <Tweet image={image} key={i} /> 
         )}   
-           {/* <Tweet something='hello'/>    */}
       </div>
     )
   }
