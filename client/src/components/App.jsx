@@ -1,6 +1,9 @@
 import React from 'react'
 import TweetList from './TweetList.jsx'
 import axios from 'axios'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TweetListWithMui from './TweetListWithMui.jsx'
+import TabsNavbar from './TabsNavbar.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -29,9 +32,13 @@ class App extends React.Component {
   render () {
     return (
       <div>
-
-        <TweetList images={this.state.imagesFromServer} />
-        
+        <MuiThemeProvider>
+          <div>
+            <TabsNavbar title="My AppBar" />
+            {/* <TweetList images={this.state.imagesFromServer} /> */}
+            <TweetListWithMui images={this.state.imagesFromServer} />
+          </div>
+        </MuiThemeProvider>
       </div>
     )
   }
