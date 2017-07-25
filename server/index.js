@@ -1,4 +1,5 @@
-const express = require('express')  
+const express = require('express')
+const path = require('path') 
 // const router = require('./router/router.js')
 const router = require('express').Router()
 const IP = process.env.IP || 'localhost'
@@ -15,7 +16,9 @@ const instagram = new Instagram({
   accessToken: ENV.ACCESS_TOKEN,
 });
 
-app.get('/callback', (request, response) => {  
+app.use(express.static(path.join(__dirname, '../public')));
+
+app.get('/images', (request, response) => {  
   instagram.get('users/self/media/recent', (err, data) => {
     if (err) {
       console.log('*** Error in instagram.get - app.get(callback) - server/index.js', err);
