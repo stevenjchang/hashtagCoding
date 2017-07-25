@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/HashtagCoding/hashtagCoding#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "babel-preset-react": "^6.24.1",
     "express": "^4.15.3",
     "node-instagram": "^3.0.0",
