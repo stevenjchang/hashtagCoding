@@ -2,3 +2,5 @@
 node_modules
 public/dist
 apikey.json
+database/dummyData.js
+database/dummyData2.js
