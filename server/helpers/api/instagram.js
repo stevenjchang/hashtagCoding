@@ -11,7 +11,7 @@ const instagram = new Instagram({
 const getInstagramUserImages = (req, res) => {
   instagram.get('users/self/media/recent', (err, data) => {
     if (err) {
-      console.log('*** Error in instagram.get - app.get(callback) - server/index.js', err);
+      console.log('*** Error in instagram.get - getInstagramUserImages() - helpers/api/instagram =>', err);
     } else {
       res.send(data);
       // fs.writeFile(path.join(__dirname, '../database/dummyData2.js'), JSON.stringify(data, null, 2), function(err, success) {
