@@ -37,8 +37,15 @@ class App extends React.Component {
             imagesArray = [],
             tweetsArray = [];
         cleanResult.map((item) => {
-          if (item.entities.media) { imagesArray.push(item.entities.media[0].media_url) } 
-          else {
+          console.log('item =>', item)
+          if (item.entities.media) { 
+            imagesArray.push(
+              {
+                image: item.entities.media[0].media_url,
+                text: item.text
+              }
+            ) 
+          } else {
           tweetsArray.push(item.text)
           console.log('imagesArray.length =>', imagesArray.length)
           console.log('tweetsArray.length =>', tweetsArray.length)
@@ -47,7 +54,8 @@ class App extends React.Component {
         })
         this.setState({imagesFromServer: imagesArray})
       })
-      .catch((err) => console.log('uh oh error'))
+      // .then(() => this.setState({imagesFromServer: imagesArray}))
+      .catch((err) => console.log('uh oh error', err))
   }
 
   render () {

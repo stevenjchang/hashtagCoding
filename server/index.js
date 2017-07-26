@@ -55,7 +55,7 @@ app.get('/images', (request, response) => {
   // });
 
 //----- twitter api -----
-  var params = {q: '#coding', count: 100, include_entities: true};
+  var params = {q: '#iamanengineer OR #hackathon', count: 200, include_entities: true, lang: "en"};
   client.get('search/tweets', params, function(error, tweets, response1) {
     if (error) {
       console.log('*** Error inside twitter api - client.get - server/index.js =>');

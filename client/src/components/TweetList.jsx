@@ -15,8 +15,8 @@ class TweetList extends React.Component {
       <div>
         <AppBar title="My AppBar" />
         <RaisedButton label="Default" />
-        {this.props.images.map((image, i) => 
-          <Tweet image={image} key={i} /> 
+        {this.props.images.map((item, i) => 
+          <Tweet image={item.image} key={i} text={item.text} /> 
         )}   
       </div>
     )
