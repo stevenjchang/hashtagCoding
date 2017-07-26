@@ -7,16 +7,18 @@ const IP = process.env.IP || 'localhost'
 const PORT = process.env.PORT || '3000'
 const app = express()  
 
-const Instagram = require('node-instagram').default
+// const Instagram = require('node-instagram').default
 const ENV = require('../apikey.json')
 const dummyData = require('../database/dummyData').dummyData
+
+const Instagram = require('../server/helpers/api/instagram')
  
 // Create a new instance. 
-const instagram = new Instagram({
-  clientId: ENV.CLIENT_ID,
-  clientSecret: ENV.CLIENT_SECRET ,
-  accessToken: ENV.ACCESS_TOKEN,
-});
+// const instagram = new Instagram({
+//   clientId: ENV.CLIENT_ID,
+//   clientSecret: ENV.CLIENT_SECRET ,
+//   accessToken: ENV.ACCESS_TOKEN,
+// });
 
 var Twitter = require('twitter');
  
@@ -36,7 +38,10 @@ var client = new Twitter({
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/images', (request, response) => {  
+app.get('/images', Instagram.getInstagramUserImages)
+// app.get('/images', () => console.log('exports:', Instagram.getInstagramUserImages))
+
+app.get('/images2', (request, response) => {  
 
 //----- instagram api -----
   // instagram.get('users/self/media/recent', (err, data) => {
@@ -53,6 +58,8 @@ app.get('/images', (request, response) => {
   //     // })
   //   }
   // });
+
+//----- instagram api -----
 
 //----- twitter api -----
   var params = {q: '#iamanengineer OR #hackathon', count: 200, include_entities: true, lang: "en"};
