@@ -15,7 +15,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    this.getImagesFromServer()
+    // this.getImagesFromServer()
+    this.getImagesFromServerTwitter()
   }
 
   getImagesFromServer() {
@@ -29,14 +30,34 @@ class App extends React.Component {
       .catch((err) => console.log('***Error in getImagesFromServer - App.jsx', err))
   }
 
+  getImagesFromServerTwitter() {
+    axios.get('/images')
+      .then((result) => {
+        let cleanResult = result.data.statuses,
+            imagesArray = [],
+            tweetsArray = [];
+        cleanResult.map((item) => {
+          if (item.entities.media) { imagesArray.push(item.entities.media[0].media_url) } 
+          else {
+          tweetsArray.push(item.text)
+          console.log('imagesArray.length =>', imagesArray.length)
+          console.log('tweetsArray.length =>', tweetsArray.length)
+          // console.log('tweetsArray :', tweetsArray)
+          }
+        })
+        this.setState({imagesFromServer: imagesArray})
+      })
+      .catch((err) => console.log('uh oh error'))
+  }
+
   render () {
     return (
       <div>
         <MuiThemeProvider>
           <div>
             <TabsNavbar title="My AppBar" />
-            {/* <TweetList images={this.state.imagesFromServer} /> */}
-            <TweetListWithMui images={this.state.imagesFromServer} />
+             <TweetList images={this.state.imagesFromServer} /> 
+            {/* <TweetListWithMui images={this.state.imagesFromServer} /> */}
           </div>
         </MuiThemeProvider>
       </div>

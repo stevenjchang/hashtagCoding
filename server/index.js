@@ -18,9 +18,27 @@ const instagram = new Instagram({
   accessToken: ENV.ACCESS_TOKEN,
 });
 
+var Twitter = require('twitter');
+ 
+var client = new Twitter({
+  consumer_key: ENV.TWITTER_CONSUMER_KEY,
+  consumer_secret: ENV.TWITTER_CONSUMER_SECRET,
+  access_token_key: ENV.TWITTER_ACCESS_TOKEN,
+  access_token_secret: ENV.TWITTER_ACCESS_SECRET
+});
+ 
+// var params = {screen_name: 'nodejs'};
+// client.get('statuses/user_timeline', params, function(error, tweets, response) {
+//   if (!error) {
+//     console.log(tweets);
+//   }
+// });
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/images', (request, response) => {  
+
+//----- instagram api -----
   // instagram.get('users/self/media/recent', (err, data) => {
   //   if (err) {
   //     console.log('*** Error in instagram.get - app.get(callback) - server/index.js', err);
@@ -36,7 +54,26 @@ app.get('/images', (request, response) => {
   //   }
   // });
 
-  response.send(dummyData);
+//----- twitter api -----
+  var params = {q: '#coding', count: 100, include_entities: true};
+  client.get('search/tweets', params, function(error, tweets, response1) {
+    if (error) {
+      console.log('*** Error inside twitter api - client.get - server/index.js =>');
+      // console.log('error => ', error, ' tweets => ', tweets, ' response =>', response)
+    } else {
+      // console.log('tweet =>', JSON.stringify(tweets, null, 2))
+      fs.writeFile(path.join(__dirname, '../database/dummyData2.js'), JSON.stringify(tweets, null, 2), function(err, success) {
+        if(err) {
+          console.log('err inside fs writefile')
+        } else {
+          console.log('success')
+        }
+      })
+      response.send(tweets);
+    }
+  });
+  
+  // response.send(dummyData);
 
 })
 
