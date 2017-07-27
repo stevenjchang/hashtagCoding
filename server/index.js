@@ -1,6 +1,5 @@
 const express = require('express')
 const path = require('path')
-var fs = require('fs')
 // const router = require('./router/router.js')
 const router = require('express').Router()
 const IP = process.env.IP || 'localhost'
@@ -39,27 +38,10 @@ var client = new Twitter({
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/images', Instagram.getInstagramUserImages)
-// app.get('/images', () => console.log('exports:', Instagram.getInstagramUserImages))
 
 app.get('/images2', (request, response) => {  
 
-//----- instagram api -----
-  // instagram.get('users/self/media/recent', (err, data) => {
-  //   if (err) {
-  //     console.log('*** Error in instagram.get - app.get(callback) - server/index.js', err);
-  //   } else {
-  //     // response.send(data);
-  //     // fs.writeFile(path.join(__dirname, '../database/dummyData2.js'), JSON.stringify(data, null, 2), function(err, success) {
-  //     //   if(err) {
-  //     //     console.log('err inside fs writefile', err)
-  //     //   } else {
-  //     //     console.log('success')
-  //     //   }
-  //     // })
-  //   }
-  // });
 
-//----- instagram api -----
 
 //----- twitter api -----
   var params = {q: '#iamanengineer OR #hackathon', count: 200, include_entities: true, lang: "en"};

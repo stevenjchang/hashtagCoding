@@ -1,10 +1,11 @@
 const Instagram = require('node-instagram').default
+const fs = require('../fs')
 const ENV = require('../../../apikey.json')
 
 // Create a new instance. 
 const instagram = new Instagram({
   clientId: ENV.CLIENT_ID,
-  clientSecret: ENV.CLIENT_SECRET ,
+  clientSecret: ENV.CLIENT_SECRET,
   accessToken: ENV.ACCESS_TOKEN,
 });
 
@@ -13,14 +14,8 @@ const getInstagramUserImages = (req, res) => {
     if (err) {
       console.log('*** Error in instagram.get - getInstagramUserImages() - helpers/api/instagram =>', err);
     } else {
+      fs.writeDummyData(data, 'dummyData3.js', true)  // the 3rd param true false turns this function on (true) and off (false)
       res.send(data);
-      // fs.writeFile(path.join(__dirname, '../database/dummyData2.js'), JSON.stringify(data, null, 2), function(err, success) {
-      //   if(err) {
-      //     console.log('err inside fs writefile', err)
-      //   } else {
-      //     console.log('success')
-      //   }
-      // })
     }
   });
 }
