@@ -11,46 +11,43 @@ class App extends React.Component {
     this.state = {
       imagesFromServer: []
     }
-    this.getImagesFromServer = this.getImagesFromServer.bind(this)
+    this.getImagesInstagram = this.getImagesInstagram.bind(this)
+    this.getImagesTwitter = this.getImagesTwitter.bind(this)
   }
 
   componentDidMount() {
-    // this.getImagesFromServer()
-    this.getImagesFromServerTwitter()
+    // this.getImagesInstagram()
+    // this.getImagesTwitter()
   }
 
-  getImagesFromServer() {
-    axios.get('/images')
+  getImagesInstagram() {
+    axios.get('/images/instagram')
       .then((result) => {
-        console.log('client result =>', result)
+        console.log('client result =>', result.data.statuses)
         let cleanResult = result.data.data,
             imagesArray =[];
-        cleanResult.map((item) => imagesArray.push(item.images.low_resolution.url))
+        cleanResult.map((item) => imagesArray.push({image: item.images.low_resolution.url}))
         this.setState({imagesFromServer: imagesArray})
       })
       .catch((err) => console.log('***Error in getImagesFromServer - App.jsx', err))
   }
 
-  getImagesFromServerTwitter() {
-    axios.get('/images')
+  getImagesTwitter() {
+    axios.get('/images/twitter')
       .then((result) => {
         let cleanResult = result.data.statuses,
             imagesArray = [],
             tweetsArray = [];
         cleanResult.map((item) => {
-          console.log('item =>', item)
           if (item.entities.media) { 
-            imagesArray.push(
-              {
-                image: item.entities.media[0].media_url,
-                text: item.text
-              }
-            ) 
+            imagesArray.push({
+              image: item.entities.media[0].media_url,
+              text: item.text
+            }) 
           } else {
           tweetsArray.push(item.text)
           console.log('imagesArray.length =>', imagesArray.length)
           console.log('tweetsArray.length =>', tweetsArray.length)
-          // console.log('tweetsArray :', tweetsArray)
           }
         })
         this.setState({imagesFromServer: imagesArray})
@@ -65,7 +62,9 @@ class App extends React.Component {
         <MuiThemeProvider>
           <div>
             <TabsNavbar title="My AppBar" />
-             <TweetList images={this.state.imagesFromServer} /> 
+            <button onClick={this.getImagesInstagram}>Instagram</button>
+            <button onClick={this.getImagesTwitter}>Twitter</button>
+            <TweetList images={this.state.imagesFromServer} /> 
             {/* <TweetListWithMui images={this.state.imagesFromServer} /> */}
           </div>
         </MuiThemeProvider>

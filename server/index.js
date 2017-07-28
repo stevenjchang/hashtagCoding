@@ -10,8 +10,8 @@ const dummyData = require('../database/dummyData').dummyData
 
 app.use(express.static(path.join(__dirname, '../public')));
 
-app.get('/images4', api.instagram.getInstagramUserImages)
-app.get('/images', api.twitter)
+app.get('/images/instagram', api.instagram.getInstagramUserImages)
+app.get('/images/twitter', api.twitter)
 
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
