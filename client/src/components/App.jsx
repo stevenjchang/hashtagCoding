@@ -23,7 +23,6 @@ class App extends React.Component {
   getImagesInstagram() {
     axios.get('/images/instagram')
       .then((result) => {
-        console.log('client result =>', result.data.statuses)
         let cleanResult = result.data.data,
             imagesArray =[];
         cleanResult.map((item) => imagesArray.push({image: item.images.low_resolution.url}))
@@ -46,8 +45,6 @@ class App extends React.Component {
             }) 
           } else {
           tweetsArray.push(item.text)
-          console.log('imagesArray.length =>', imagesArray.length)
-          console.log('tweetsArray.length =>', tweetsArray.length)
           }
         })
         this.setState({imagesFromServer: imagesArray})
