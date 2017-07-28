@@ -22,6 +22,7 @@ class App extends React.Component {
   getImagesFromServer() {
     axios.get('/images')
       .then((result) => {
+        console.log('client result =>', result)
         let cleanResult = result.data.data,
             imagesArray =[];
         cleanResult.map((item) => imagesArray.push(item.images.low_resolution.url))

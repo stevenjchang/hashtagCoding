@@ -14,7 +14,7 @@ const getInstagramUserImages = (req, res) => {
     if (err) {
       console.log('*** Error in instagram.get - getInstagramUserImages() - helpers/api/instagram =>', err);
     } else {
-      fs.writeDummyData(data, 'dummyData3.js', true)  // the 3rd param true false turns this function on (true) and off (false)
+      fs.writeDummyData(data, 'dummyData3.js', false)  // the 3rd param true false turns this function on (true) and off (false)
       res.send(data);
     }
   });
