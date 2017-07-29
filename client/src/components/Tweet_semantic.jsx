@@ -1,17 +1,13 @@
-import React from 'react';
-import { Button } from 'semantic-ui-react';
- 
-const ButtonExampleButton = () => (
-  // <Button>
-  //   Click Here
-  // </Button>
+import React from 'react'
+
+const Tweet_semantic = ({image}) => (
   <div className="ui card">
-    <div className="content">
+    {/* <div className="content">
       <div className="right floated meta">14h</div>
        <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg" /> Elliot
-    </div>
+    </div> */}
     <div className="image">
-       <img /> Image
+       <img src={image} />
     </div>
     <div className="content">
       <span className="right floated">
@@ -24,10 +20,10 @@ const ButtonExampleButton = () => (
     <div className="extra content">
       <div className="ui large transparent left icon input">
         <i className="heart outline icon"></i>
-         <input type="text" placeholder="Add Comment..." /> Input
+         <input type="text" placeholder="Add Comment..." />
       </div>
     </div>
-  </div>
+  </div>  
 )
- 
-export default ButtonExampleButton
+
+export default Tweet_semantic

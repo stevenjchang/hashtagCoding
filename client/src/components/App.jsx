@@ -1,7 +1,7 @@
 import React from 'react'
 import TweetList from './TweetList.jsx'
+import TweetList_semantic from './TweetList_semantic.jsx'
 import axios from 'axios'
-import SemanticUI from './SemanticUI.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -30,8 +30,10 @@ class App extends React.Component {
   }
 
   getImagesTwitter() {
+    console.log('twitter call init')
     axios.get('/images/twitter')
       .then((result) => {
+        console.log('twitter call received')
         let cleanResult = result.data.statuses,
             imagesArray = [],
             tweetsArray = [];
@@ -55,10 +57,10 @@ class App extends React.Component {
     return (
       <div>
           <div>
-            <SemanticUI />
             <button onClick={this.getImagesInstagram}>Instagram</button>
             <button onClick={this.getImagesTwitter}>Twitter</button>
-            <TweetList images={this.state.imagesFromServer} /> 
+            {/* <TweetList images={this.state.imagesFromServer} />  */}
+            <TweetList_semantic images={this.state.imagesFromServer} /> 
           </div>
       </div>
     )
