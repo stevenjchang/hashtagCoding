@@ -1,4 +1,5 @@
 const path = require('path');
+const RewriteImportPlugin = require("less-plugin-rewrite-import");
 
 module.exports = {
   entry: './client/src/index',
@@ -28,7 +29,7 @@ module.exports = {
         test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
         loader: 'url-loader?limit=1024&name=[name]-[hash:8].[ext]!image-webpack',
       },
-    ]
+    ],
   },
   // target: "node"
-};
+};  
