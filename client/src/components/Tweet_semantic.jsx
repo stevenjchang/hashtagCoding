@@ -3,14 +3,15 @@ import React from 'react'
 var randomNumberTo15 = () => Math.floor(Math.random() * 15)
 var randomNumberTo50 = () => Math.floor(Math.random() * 50)
 
-const Tweet_semantic = ({image}) => (
+const Tweet_semantic = ({image, text}) => (
   <div className="ui card">
-     {/* <div className="content">
+      <div className="content">
       <div className="right floated meta">14h</div>
        <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg" /> Elliot
-    </div>  */}
+    </div>  
     <div className="image">
        <img src={image} />
+       <p>{text}</p>
     </div>
     <div className="content">
       <span className="right floated">

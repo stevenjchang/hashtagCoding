@@ -13,7 +13,7 @@ const TweetList_semantic = ({images}) => {
         {images.map((item, i) => {
           return (<Grid.Column>
           {/* <Image src={item.image} key={i}/> */}
-          <Tweet_semantic image={item.image} key={i} />
+          <Tweet_semantic image={item.image} key={i} text={item.text} />
           </Grid.Column>
           )}
         )}
