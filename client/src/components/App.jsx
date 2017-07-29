@@ -1,7 +1,8 @@
 import React from 'react'
+import axios from 'axios'
+import MenuBar from './MenuBar.jsx'
 import TweetList from './TweetList.jsx'
 import TweetList_semantic from './TweetList_semantic.jsx'
-import axios from 'axios'
 
 class App extends React.Component {
   constructor(props) {
@@ -56,12 +57,11 @@ class App extends React.Component {
   render () {
     return (
       <div>
-          <div>
-            <button onClick={this.getImagesInstagram}>Instagram</button>
-            <button onClick={this.getImagesTwitter}>Twitter</button>
-            {/* <TweetList images={this.state.imagesFromServer} />  */}
-            <TweetList_semantic images={this.state.imagesFromServer} /> 
-          </div>
+        <MenuBar />
+        <button onClick={this.getImagesInstagram}>Instagram</button>
+        <button onClick={this.getImagesTwitter}>Twitter</button>
+        {/* <TweetList images={this.state.imagesFromServer} />  */}
+        <TweetList_semantic images={this.state.imagesFromServer} /> 
       </div>
     )
   }
