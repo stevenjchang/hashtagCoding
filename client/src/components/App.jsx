@@ -4,6 +4,7 @@ import axios from 'axios'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import TweetListWithMui from './TweetListWithMui.jsx'
 import TabsNavbar from './TabsNavbar.jsx'
+import SemanticUI from './SemanticUI.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -58,6 +59,7 @@ class App extends React.Component {
       <div>
         <MuiThemeProvider>
           <div>
+            <SemanticUI />
             <TabsNavbar title="My AppBar" />
             <button onClick={this.getImagesInstagram}>Instagram</button>
             <button onClick={this.getImagesTwitter}>Twitter</button>
