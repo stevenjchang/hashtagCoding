@@ -11,7 +11,7 @@ class MenuBar extends React.Component {
 
     return (
       <Segment inverted color='blue'>
-        <Menu inverted pointing secondary color='blue' inverted widths={7}>
+        <Menu inverted secondary color='blue' inverted widths={7}>
           <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleItemClick} />
           <Menu.Item name='messages' active={activeItem === 'messages'} onClick={this.handleItemClick} />
           <Menu.Item name='friends' active={activeItem === 'friends'} onClick={this.handleItemClick} />

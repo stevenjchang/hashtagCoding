@@ -7,8 +7,8 @@ const TweetList_semantic = ({images}) => {
   if (images) {
     imagesComponent = (
       <div>
-         <Grid> 
-        <Grid.Row columns={3}>
+         <Grid centered={true}> 
+        <Grid.Row columns={3} divided={'vertically'} stretched={true} textAlign={"right"}>
         
         {images.map((item, i) => {
           return (<Grid.Column>
