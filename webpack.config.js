@@ -1,5 +1,8 @@
 const path = require('path');
 const RewriteImportPlugin = require("less-plugin-rewrite-import");
+const devFlagPlugin = new webpack.DefinePlugin({  
+  __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
+});
 
 module.exports = {
   entry: './client/src/index',
@@ -32,4 +35,9 @@ module.exports = {
     ],
   },
   // target: "node"
+  plugins: [  
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
+    devFlagPlugin
+  ],
 };  

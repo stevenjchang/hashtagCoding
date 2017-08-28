@@ -19,16 +19,16 @@ class App extends React.Component {
     // this.getImagesTwitter()
   }
 
-  getImagesInstagram() {
-    axios.get('/images/instagram')
-      .then((result) => {
-        let cleanResult = result.data.data,
-            imagesArray =[];
-        cleanResult.map((item) => imagesArray.push({image: item.images.low_resolution.url}))
-        this.setState({imagesFromServer: imagesArray})
-      })
-      .catch((err) => console.log('***Error in getImagesFromServer - App.jsx', err))
-  }
+  // getImagesInstagram() {
+  //   axios.get('/images/instagram')
+  //     .then((result) => {
+  //       let cleanResult = result.data.data,
+  //           imagesArray =[];
+  //       cleanResult.map((item) => imagesArray.push({image: item.images.low_resolution.url}))
+  //       this.setState({imagesFromServer: imagesArray})
+  //     })
+  //     .catch((err) => console.log('***Error in getImagesFromServer - App.jsx', err))
+  // }
 
   getImagesTwitter() {
     console.log('twitter call init')
