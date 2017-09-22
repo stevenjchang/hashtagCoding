@@ -1,9 +1,8 @@
 import React from 'react'
-import TweetList from './TweetList.jsx'
 import axios from 'axios'
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import TweetListWithMui from './TweetListWithMui.jsx'
-import TabsNavbar from './TabsNavbar.jsx'
+import MenuBar from './MenuBar.jsx'
+import TweetList from './TweetList.jsx'
+import TweetList_semantic from './TweetList_semantic.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -32,8 +31,10 @@ class App extends React.Component {
   }
 
   getImagesTwitter() {
+    console.log('twitter call init')
     axios.get('/images/twitter')
       .then((result) => {
+        console.log('twitter call received')
         let cleanResult = result.data.statuses,
             imagesArray = [],
             tweetsArray = [];
@@ -56,15 +57,11 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <MuiThemeProvider>
-          <div>
-            <TabsNavbar title="My AppBar" />
-            <button onClick={this.getImagesInstagram}>Instagram</button>
-            <button onClick={this.getImagesTwitter}>Twitter</button>
-            <TweetList images={this.state.imagesFromServer} /> 
-            {/* <TweetListWithMui images={this.state.imagesFromServer} /> */}
-          </div>
-        </MuiThemeProvider>
+        <MenuBar />
+        <button onClick={this.getImagesInstagram}>Instagram</button>
+        <button onClick={this.getImagesTwitter}>Twitter</button>
+        {/* <TweetList images={this.state.imagesFromServer} />  */}
+        <TweetList_semantic images={this.state.imagesFromServer} /> 
       </div>
     )
   }
