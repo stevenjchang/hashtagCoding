@@ -1,4 +1,5 @@
 import React from 'react'
+import axios from 'axios'
 
 class SubmitLink extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class SubmitLink extends React.Component {
   }
 
   handleChange(event) {
+    const name = event.target.name;
+    console.log('name =>', event.target.name, 'value =>', event.target.value);
     this.setState({
       [name]: event.target.value
     })
@@ -24,6 +27,12 @@ class SubmitLink extends React.Component {
   handleSubmit(event) {
     // alert('A name was submitted: ' + this.state.input);
     event.preventDefault();
+    axios.post('/db/post', 
+      {example: "text"}
+    )
+      .then((result) => {
+        alert('link successfully submitted:' + result );
+      })
   }
 
   render() {
