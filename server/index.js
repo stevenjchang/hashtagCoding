@@ -5,15 +5,21 @@ const router = require('express').Router()
 const IP = process.env.IP || 'localhost'
 const PORT = process.env.PORT || '3000'
 const app = express()  
+const bodyParser = require('body-parser');
 const api = require('../server/helpers/api')
 const dummyData = require('../database/dummyData').dummyData
 const db = require('./db')
 
 app.use(express.static(path.join(__dirname, '../public')));
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
-app.get('/images/instagram', api.instagram.getInstagramUserImages)
-app.get('/images/twitter', api.twitter)
-app.post('/db/post', () => console.log('*** db/post route hit'))
+app.get('/images/instagram', api.instagram.getInstagramUserImages);
+app.get('/images/twitter', api.twitter);
+app.post('/db/post', (req, res) => {
+  console.log('*** db/post route hit, req.body =>', req.body);
+
+})
 app.get('/db/post', () => {
   db('users').insert({username: "test agent", name: "Avery", email: "google.com"})
     .then((result) => console.log('result!! =>', result))
