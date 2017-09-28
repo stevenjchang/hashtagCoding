@@ -29,7 +29,8 @@ class SubmitLink extends React.Component {
     event.preventDefault();
     axios.post('/db/post', this.state)
       .then((result) => {
-        alert('link successfully submitted:' + result );
+
+        console.log('link successfully submitted:' + result );
       })
   }
 

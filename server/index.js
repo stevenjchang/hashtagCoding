@@ -18,7 +18,13 @@ app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.post('/db/post', (req, res) => {
   console.log('*** db/post route hit, req.body =>', req.body);
+  let info = req.body;
+  db('links').insert({name: info.name, title: info.title})
+    .then((result) => {
+      console.log('*** app.post(/db/post) successful in server/index')
+    })
 
+  res.send('success');
 })
 app.get('/db/post', () => {
   db('users').insert({username: "test agent", name: "Avery", email: "google.com"})
