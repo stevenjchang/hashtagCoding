@@ -19,12 +19,22 @@ app.get('/images/twitter', api.twitter);
 app.post('/db/post', (req, res) => {
   console.log('*** db/post route hit, req.body =>', req.body);
   let info = req.body;
-  db('links').insert({name: info.name, title: info.title})
+  db('links').insert({
+    name: info.name, 
+    title: info.title,
+    url: info.url,
+    type: info.type,
+    image: info.image
+  })
     .then((result) => {
-      console.log('*** app.post(/db/post) successful in server/index')
+      console.log('*** app.post(/db/post) successful in server/index');
+      res.send('success');
+    })
+    .catch((error) => {
+      console.log('!!!!! error inside app.post(/db/post) inside server/index')
     })
 
-  res.send('success');
+  
 })
 app.get('/db/post', () => {
   db('users').insert({username: "test agent", name: "Avery", email: "google.com"})
