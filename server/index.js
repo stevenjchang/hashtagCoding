@@ -34,9 +34,13 @@ app.post('/db/post', (req, res) => {
       console.log('!!!!! error inside app.post(/db/post) inside server/index')
     })
 })
-app.get('/db/post', () => {
-  db('users').insert({username: "test agent", name: "Avery", email: "google.com"})
-    .then((result) => console.log('result!! =>', result))
+app.get('/db/post', (req, res) => {
+  // db.select().from('links').timeout(2000)
+  db('links').select().timeout(2000)
+    .then((result) => {
+      console.log('----------------', result);
+      res.send(result);
+    })
 })
 
 app.listen(PORT, (err) => {  
