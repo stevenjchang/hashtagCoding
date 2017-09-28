@@ -33,16 +33,11 @@ app.post('/db/post', (req, res) => {
     .catch((error) => {
       console.log('!!!!! error inside app.post(/db/post) inside server/index')
     })
-
-  
 })
 app.get('/db/post', () => {
   db('users').insert({username: "test agent", name: "Avery", email: "google.com"})
     .then((result) => console.log('result!! =>', result))
 })
-
-// knex('likes').insert({profiles_id: voteObject.profile_id, submission_id: voteObject.collabs_id})
-
 
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
