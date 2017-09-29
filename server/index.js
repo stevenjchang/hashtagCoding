@@ -17,7 +17,6 @@ app.use(bodyParser.json());
 app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.post('/db/post', (req, res) => {
-  console.log('*** db/post route hit, req.body =>', req.body);
   let info = req.body;
   db('links').insert({
     name: info.name, 
@@ -34,13 +33,9 @@ app.post('/db/post', (req, res) => {
       console.log('!!!!! error inside app.post(/db/post) inside server/index')
     })
 })
-app.get('/db/post', (req, res) => {
-  // db.select().from('links').timeout(2000)
+app.get('/links', (req, res) => {
   db('links').select().timeout(2000)
-    .then((result) => {
-      console.log('----------------', result);
-      res.send(result);
-    })
+    .then((result) => res.send(result))
 })
 
 app.listen(PORT, (err) => {  
