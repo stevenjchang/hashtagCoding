@@ -30,7 +30,18 @@ exports.up = function(knex, Promise) {
                 .references('id')
                 .inTable('posts');
           table.dateTime('postDate');
+      }),
+
+      knex.schema.createTable('links', function(table){
+          table.increments('id').primary();
+          table.string('name');
+          table.string('title');
+          table.string('url');
+          table.string('image');
+          table.string('type');
+          table.dateTime('postDate');
       })
+      
   ])
 };
 
