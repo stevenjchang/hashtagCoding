@@ -1,8 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Link from './Link.jsx'
-import {createClient} from 'contentful'
-import ENV from '../../../apikey.json'
+import client from '../../../contentful.config.js'
 
 // class Links extends React.Component {
 //   constructor(props) {
@@ -37,19 +36,13 @@ class Links_with_Contentful extends React.Component {
     this.state = {
       links: []
     }
+    
     this.getLinks = this.getLinks.bind(this);
   }
 
   getLinks() {
-    const client = createClient({
-      space: ENV.CONTENTFUL_SPACE_ID,
-      accessToken: ENV.CONTENTFUL_DELIVERY_API
-    })
     client.getEntries({content_type: 'links'})
-    .then((entry) => {
-      console.log('this is entry =>', entry.items);
-      this.setState({links: entry.items})
-    })
+    .then((entry) => this.setState({links: entry.items}))
   }
 
   render() {
