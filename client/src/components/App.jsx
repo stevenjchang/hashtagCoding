@@ -36,8 +36,8 @@ class App extends React.Component {
     console.log('twitter call init')
     axios.get('/images/twitter')
       .then((result) => {
-        console.log('twitter call received')
-        let cleanResult = result.data.statuses,
+        console.log('twitter call received', result)
+        let cleanResult = result.data,
             imagesArray = [],
             tweetsArray = [];
         cleanResult.map((item) => {
