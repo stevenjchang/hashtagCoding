@@ -29,6 +29,7 @@
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
+    "contentful": "^4.6.2",
     "express": "^4.15.3",
     "knex": "^0.13.0",
     "material-ui": "^0.18.7",
