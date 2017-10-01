@@ -49,9 +49,9 @@ class Links_with_Contentful extends React.Component {
     return (
       <div>Links
       <button onClick={this.getLinks}>Get Links</button>
-        {this.state.links.map((item, i) => 
-          <Link item={item.fields} key={i}></Link>
-        )}
+      {this.state.links.map((item, i) => 
+        <Link item={item.fields} key={i}></Link>
+      )}
       </div>
     )
   }
