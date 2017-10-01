@@ -17,7 +17,7 @@ const getCraigslistFeed = (req, res) => {
     .search(options, 'prius')
     .then((listing) => {
       res.status(200).send(listing)
-      fs.writeDummyData(listing, 'craigslist_car.js', true)
+      fs.writeDummyData(listing, 'craigslist_car.js', false)
     })
     .catch((error) => console.error('*** error! inside helper/api/craigslist', error))
 }
@@ -26,4 +26,4 @@ const getCraigslistFeed_dummyData = (req, res) => {
   res.status(200).send(dummyData)
 }
 
-module.exports = getCraigslistFeed;
+module.exports.getCraigslistFeed = getCraigslistFeed_dummyData;
