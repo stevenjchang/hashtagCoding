@@ -16,29 +16,30 @@ app.use(bodyParser.json());
 
 app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
+app.get('/craigslist', api.craigslist.getCraigslistFeed);
+
 app.post('/db/post', (req, res) => {
   let info = req.body;
-  db('links').insert({
+  db('links')
+    .insert({
     name: info.name, 
     title: info.title,
     url: info.url,
     type: info.type,
     image: info.image
-  })
+    })
     .then((result) => {
-      console.log('*** app.post(/db/post) successful in server/index');
       res.send('success');
     })
     .catch((error) => {
-      console.log('!!!!! error inside app.post(/db/post) inside server/index')
+      console.log('*** error! inside app.post(/db/post)')
     })
 })
 app.get('/links', (req, res) => {
-  db('links').select().timeout(2000)
+  db('links')
+    .select().timeout(2000)
     .then((result) => res.send(result))
 })
-
-app.get('/craigslist', api.craigslist.getCraigslistFeed);
 
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
