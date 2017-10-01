@@ -10,6 +10,9 @@ const api = require('../server/helpers/api')
 const dummyData = require('../database/dummyData').dummyData
 const db = require('./db')
 
+const axios = require('axios')
+const fs = require('../server/helpers/fs')
+
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,6 +20,12 @@ app.use(bodyParser.json());
 app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.get('/craigslist', api.craigslist.getCraigslistFeed);
+app.get('/craigslist_scraper', (req, res) => {
+  axios
+    .get('https://sfbay.craigslist.org/search/sby/cto')
+    .then((result) => fs.writeDummyData(result.data, 'craigslist.html', true) )
+    .catch((error) => console.log('*** error! inside app.get craigslist_scraper in server/index'))
+})
 
 app.post('/db/post', (req, res) => {
   let info = req.body;
