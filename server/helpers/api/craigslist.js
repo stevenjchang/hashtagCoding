@@ -7,9 +7,9 @@ let client = new craigslist.Client({
   city : 'sfbay'
 });
 
-const getCraigslistFeed_2 = (req, res) => {
+const getCraigslistFeed = (req, res) => {
   const options = {
-    category : 'cta',
+    category : 'cto',
     maxAsk : '2000',
     minAsk : '1'
   };
@@ -17,12 +17,12 @@ const getCraigslistFeed_2 = (req, res) => {
     .search(options, 'prius')
     .then((listing) => {
       res.status(200).send(listing)
-      // fs.writeDummyData(listing, 'craigslist_car.js', true)
+      fs.writeDummyData(listing, 'craigslist_car.js', true)
     })
-    .catch((error) => console.error('error:', error))
+    .catch((error) => console.error('*** error! inside helper/api/craigslist', error))
 }
 
-const getCraigslistFeed = (req, res) => {
+const getCraigslistFeed_dummyData = (req, res) => {
   res.status(200).send(dummyData)
 }
 
