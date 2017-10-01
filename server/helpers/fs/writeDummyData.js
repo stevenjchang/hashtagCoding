@@ -2,8 +2,9 @@ const fs = require('fs')
 const path = require('path')
 
 const writeDummyData = (data, filename, boolean) => {
+  const prefix = 'module.exports = \n';
   if (boolean) {  //set boolean to true to turn function on
-    fs.writeFile(path.join(__dirname, '../../../database/',filename), JSON.stringify(data, null, 2), function(err, success) {
+    fs.writeFile(path.join(__dirname, '../../../database/',filename), prefix + JSON.stringify(data, null, 2), function(err, success) {
       if (err) {
         console.log('***Error! in writeDummyData - helpers/fs/writeFile', err)
       } else {
