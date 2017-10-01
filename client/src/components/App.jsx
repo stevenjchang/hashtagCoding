@@ -5,6 +5,7 @@ import TweetList from './TweetList.jsx'
 import TweetList_semantic from './TweetList_semantic.jsx'
 import SubmitLink from './SubmitLink.jsx'
 import Links from './Links.jsx'
+import CraigslistList from './CraigslistList.jsx'
 
 class App extends React.Component {
   constructor(props) {
@@ -63,6 +64,7 @@ class App extends React.Component {
         <button onClick={this.getImagesInstagram}>Instagram</button>
         <button onClick={this.getImagesTwitter}>Twitter</button>
         <Links></Links>
+        <CraigslistList></CraigslistList>
         {/* <TweetList images={this.state.imagesFromServer} />  */}
         <TweetList_semantic images={this.state.imagesFromServer} /> 
         <h1>Complete Form below to submit a link</h1>
