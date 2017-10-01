@@ -38,6 +38,8 @@ app.get('/links', (req, res) => {
     .then((result) => res.send(result))
 })
 
+app.get('/craigslist', api.craigslist);
+
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
   console.log(`server is listening on ${PORT}`)
