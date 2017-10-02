@@ -12,6 +12,8 @@ const db = require('./db')
 
 const axios = require('axios')
 const fs = require('../server/helpers/fs')
+// const cheerio = require('cheerio')
+// const $ = cheerio.load('<ul id="fruits">...</ul>');
 
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,7 +25,12 @@ app.get('/craigslist', api.craigslist.getCraigslistFeed);
 app.get('/craigslist_scraper', (req, res) => {
   axios
     .get('https://sfbay.craigslist.org/search/sby/cto')
-    .then((result) => fs.writeDummyData(result.data, 'craigslist.html', true) )
+    // .then((result) => fs.writeDummyData(result.data, 'craigslist.html', true) )
+    .then((result) => {
+      console.log('hwerere');
+      // () => console.log('in side here')
+      api.craigslist_scraper.getCraigslistScrapper();
+    })
     .catch((error) => console.log('*** error! inside app.get craigslist_scraper in server/index'))
 })
 
