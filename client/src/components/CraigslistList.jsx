@@ -14,7 +14,7 @@ class CraigslistList extends React.Component {
 
   getCraigslist() {
     axios
-      .get('/craigslist')
+      .get('/craigslist_scraper')
       .then((result) => {
         console.log('craigslist =>', result.data)
         this.setState({ result: result.data })
