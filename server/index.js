@@ -41,11 +41,12 @@ app.post('/db/post', (req, res) => {
       console.log('*** error! inside app.post(/db/post)')
     })
 })
-app.get('/links', (req, res) => {
-  db('links')
-    .select().timeout(2000)
-    .then((result) => res.send(result))
-})
+// app.get('/links', (req, res) => {
+//   db('links')
+//     .select().timeout(2000)
+//     .then((result) => res.send(result))
+// })
+app.get('/links', api.links.getLinksFromDb);
 
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
