@@ -23,6 +23,7 @@ app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.get('/craigslist', api.craigslist.getCraigslistFeed);
 app.get('/craigslist_scraper', api.craigslist_scraper.getCraigslistScrapper);
+app.get('/links', api.links.getLinksFromDb);
 
 app.post('/db/post', (req, res) => {
   let info = req.body;
@@ -41,12 +42,7 @@ app.post('/db/post', (req, res) => {
       console.log('*** error! inside app.post(/db/post)')
     })
 })
-// app.get('/links', (req, res) => {
-//   db('links')
-//     .select().timeout(2000)
-//     .then((result) => res.send(result))
-// })
-app.get('/links', api.links.getLinksFromDb);
+
 
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
