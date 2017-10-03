@@ -18,16 +18,14 @@ class SubmitLink extends React.Component {
 
   handleChange(event) {
     const name = event.target.name;
-    console.log('name =>', event.target.name, 'value =>', event.target.value);
     this.setState({
       [name]: event.target.value
     })
   }
 
   handleSubmit(event) {
-    // alert('A name was submitted: ' + this.state.input);
     event.preventDefault();
-    axios.post('/db/post', this.state)
+    axios.post('/links', this.state)
       .then((result) => {
         console.log('link successfully submitted:' + result );
         this.setState({
