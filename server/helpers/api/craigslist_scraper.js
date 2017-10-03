@@ -2,13 +2,13 @@ const fs = require('fs')
 const path = require('path')
 const cheerio = require('cheerio');
 
-const getCraigslistScrapper = () => {
+const getCraigslistScrapper = (req, res) => {
   fs.readFile(path.join(__dirname, '../../../database/craigslist.html'), 'utf-8', function(err, data) {
     if (err) {
       console.log('*** Error! in craigslist_scraper.js');
     } else {
-        const $ = cheerio.load(data);
-        const carList = [];
+      const $ = cheerio.load(data);
+      const carList = [];
       $('.result-row').each(function(index, element){
         carList[index] = {};
         let resultImage = $(element).find('.result-image');
@@ -24,8 +24,8 @@ const getCraigslistScrapper = () => {
         let neighborhood = $(element).find('.result-hood');
         carList[index]['neighborhood'] = $(neighborhood).text()
       })
-      console.log('*** carList =>', carList)
-      }
+      res.send(carList)
+    }
   })
 }
 

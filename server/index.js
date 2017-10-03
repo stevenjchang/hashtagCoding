@@ -22,17 +22,7 @@ app.use(bodyParser.json());
 app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.get('/craigslist', api.craigslist.getCraigslistFeed);
-app.get('/craigslist_scraper', (req, res) => {
-  axios
-    .get('https://sfbay.craigslist.org/search/sby/cto')
-    // .then((result) => fs.writeDummyData(result.data, 'craigslist.html', true) )
-    .then((result) => {
-      console.log('hwerere');
-      // () => console.log('in side here')
-      api.craigslist_scraper.getCraigslistScrapper();
-    })
-    .catch((error) => console.log('*** error! inside app.get craigslist_scraper in server/index'))
-})
+app.get('/craigslist_scraper', api.craigslist_scraper.getCraigslistScrapper);
 
 app.post('/db/post', (req, res) => {
   let info = req.body;
