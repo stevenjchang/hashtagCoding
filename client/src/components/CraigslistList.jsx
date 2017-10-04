@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Grid, Button, Image } from 'semantic-ui-react'
 import CraigslistListItem from './CraigslistListItem.jsx'
 
 class CraigslistList extends React.Component {
@@ -14,7 +15,7 @@ class CraigslistList extends React.Component {
 
   getCraigslist() {
     axios
-      .get('/craigslist')
+      .get('/craigslist_scraper')
       .then((result) => {
         console.log('craigslist =>', result.data)
         this.setState({ result: result.data })
@@ -24,10 +25,18 @@ class CraigslistList extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={this.getCraigslist}>Fetch CraigsList</button>
-        {this.state.result.map((item, i) =>
-          <CraigslistListItem item={item} key={i}></CraigslistListItem>
-        )}
+        <Button inverted color='purple' onClick={this.getCraigslist}>Fetch CraigsList</Button>
+        <Grid centered={true} divided='vertically'>
+          <Grid.Row columns={3} stretched={true} textAlign={'center'}>
+            {this.state.result.map((item, i) => {
+              return (
+                <Grid.Column>
+                  <CraigslistListItem item={item} key={i}></CraigslistListItem>
+                </Grid.Column>)}
+              )
+            }
+          </Grid.Row>
+        </Grid>
       </div>
     )
   }
