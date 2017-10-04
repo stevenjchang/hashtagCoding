@@ -4,7 +4,7 @@ var randomNumberTo15 = () => Math.floor(Math.random() * 15)
 var randomNumberTo50 = () => Math.floor(Math.random() * 50)
 
 const Tweet_semantic = ({image, text}) => (
-  <div className="ui card right">
+  <div className="ui fluid card right">
       <div className="content">
       <div className="right floated meta">14h</div>
        <img className="ui avatar image" src="https://semantic-ui.com/images/avatar/large/elliot.jpg" /> Elliot
