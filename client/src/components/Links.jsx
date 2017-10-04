@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Button } from 'semantic-ui-react'
 import Link from './Link.jsx'
 import client from '../../../contentful.config.js'
 
@@ -47,11 +48,11 @@ class Links_with_Contentful extends React.Component {
 
   render() {
     return (
-      <div>Links
-      <button onClick={this.getLinks}>Get Links</button>
-      {this.state.links.map((item, i) => 
-        <Link item={item.fields} key={i}></Link>
-      )}
+      <div>
+        <Button inverted color='red' onClick={this.getLinks}>Get Links</Button>
+        {this.state.links.map((item, i) => 
+          <Link item={item.fields} key={i}></Link>
+        )}
       </div>
     )
   }

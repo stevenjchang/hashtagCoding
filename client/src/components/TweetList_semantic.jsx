@@ -7,19 +7,17 @@ const TweetList_semantic = ({images}) => {
   if (images) {
     imagesComponent = (
       <div>
-         <Grid centered={true}> 
-        <Grid.Row columns={3} divided={'vertically'} stretched={true} textAlign={"right"}>
-        
-        {images.map((item, i) => {
-          return (<Grid.Column>
-          {/* <Image src={item.image} key={i}/> */}
-          <Tweet_semantic image={item.image} key={i} text={item.text} />
-          </Grid.Column>
-          )}
-        )}
-        
-        </Grid.Row>
-         </Grid> 
+        <Grid centered={true}> 
+          <Grid.Row columns={3} divided={true} stretched={true} textAlign={"right"}>
+          {images.map((item, i) => {
+            return (
+              <Grid.Column>
+                <Tweet_semantic image={item.image} key={i} text={item.text} />
+              </Grid.Column>
+            )
+          })}
+          </Grid.Row>
+        </Grid> 
       </div>
     )
   }

@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios'
+import { Button } from 'semantic-ui-react'
 import MenuBar from './MenuBar.jsx'
 import TweetList from './TweetList.jsx'
 import TweetList_semantic from './TweetList_semantic.jsx'
@@ -61,8 +62,8 @@ class App extends React.Component {
     return (
       <div>
         <MenuBar />
-        <button onClick={this.getImagesInstagram}>Instagram</button>
-        <button onClick={this.getImagesTwitter}>Twitter</button>
+        <Button inverted color='blue' onClick={this.getImagesInstagram}>Instagram</Button>
+        <Button inverted color='orange' onClick={this.getImagesTwitter}>Twitter</Button>
         <Links></Links>
         <CraigslistList></CraigslistList>
         {/* <TweetList images={this.state.imagesFromServer} />  */}
