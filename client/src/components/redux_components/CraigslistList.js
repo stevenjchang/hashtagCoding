@@ -7,7 +7,7 @@ const CraigslistList = ({ list, onButtonClick }) => {
   let renderedList = list[0] ? list[0] : [];
   return (
     <div>
-      <Button inverted color='purple' onClick={onButtonClick}>onButtonClick</Button>
+      <Button inverted color='purple' onClick={onButtonClick}>Craigslist</Button>
       <Grid centered={true} divided='vertically'>
         <Grid.Row columns={3} stretched={true} textAlign={'center'}>
           {renderedList.map((item, i) => {
