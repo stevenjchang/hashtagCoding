@@ -13,18 +13,41 @@ import SubmitLink from './SubmitLink.jsx'
 import Craigslist from './../containers/Craigslist.jsx'
 import Twitter from './../containers/Twitter'
 
-const App = () => (
+import { connect } from 'react-redux'
+import { getCraigslistFeed, getTwitterFeed } from '../actions'
+import { Button } from 'semantic-ui-react'
+
+const App = ({onClickCraigslist, onClickTwitter}) => (
   <div>
     <Menubar />
+    <Button inverted color='purple' onClick={onClickCraigslist}>CL</Button>
+    <Button inverted color='blue' onClick={onClickTwitter}>T</Button>
     <Twitter />
     <Craigslist />
     <Links />
-    <Craigslist /> 
-    <AddTodo />
+    {/* <AddTodo />
     <VisibleTodoList />
     <Footer />
-    <SubmitLink />
+    <SubmitLink /> */}
   </div>
 )
 
-export default App
+const mapStateToProps = state => {
+  return {
+
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onClickCraigslist: () => dispatch(getCraigslistFeed()),
+    onClickTwitter: () => dispatch(getTwitterFeed())
+  }
+}
+
+const AppConnected = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
+
+export default AppConnected
