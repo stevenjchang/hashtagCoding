@@ -4,6 +4,10 @@ const apiCall = (state = [], action) => {
       return [
         action.data.data
       ]
+    case 'GET_TWITTER_FEED':
+      return [
+        action.data.data
+      ]
     default: 
       return state
   }
