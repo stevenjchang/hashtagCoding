@@ -11,3 +11,9 @@ export const getCraigslistFeed = (dispatch) => {
       err => dispatch({ type: 'GET_CRAIGSLIST_FEED_ERROR', err })
     )
 }
+
+export const getTweeterFeed = () => {
+  return {
+    type: 'GET_TWITTER_FEED'
+  }
+}
