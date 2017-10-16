@@ -3,7 +3,7 @@ import React from 'react'
 var randomNumberTo15 = () => Math.floor(Math.random() * 15)
 var randomNumberTo50 = () => Math.floor(Math.random() * 50)
 
-const Tweet_semantic = ({image, text}) => (
+const TwitterListItem = ({image, text}) => (
   <div className="ui fluid card right">
       <div className="content">
       <div className="right floated meta">14h</div>
@@ -30,4 +30,4 @@ const Tweet_semantic = ({image, text}) => (
   </div>  
 )
 
-export default Tweet_semantic
+export default TwitterListItem
