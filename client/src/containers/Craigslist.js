@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getCraigslistFeed } from '../actions'
-import CraigslistList from '../components/redux_components/CraigslistList'
+import CraigslistList from '../components/CraigslistList'
 
 // const getVisibleTodos = (todos, filter) => {
 //   switch (filter) {
