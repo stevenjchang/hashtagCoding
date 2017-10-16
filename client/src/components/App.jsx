@@ -9,6 +9,7 @@ import Menubar from './MenuBar.jsx'
 import SubmitLink from './SubmitLink.jsx'
 import Craigslist from './../containers/Craigslist.jsx'
 import Twitter from './../containers/Twitter'
+import Instagram from '../containers/Instagram'
 
 import { connect } from 'react-redux'
 import { getCraigslistFeed, getTwitterFeed } from '../actions'
@@ -19,7 +20,7 @@ const App = ({onClickCraigslist, onClickTwitter}) => (
   <div>
     <Menubar />
     <ButtonMenu />
-
+    <Instagram />
     <Twitter />
     <Craigslist />
     <Links />

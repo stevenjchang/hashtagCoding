@@ -4,8 +4,6 @@ import Tweet_semantic from './Tweet_semantic.jsx'
 
 const TweetList_semantic = ({ images, onButtonClick }) => {
   let renderedImages = images[0] ? images[0] : [];
-  console.log('renderedImages =>', renderedImages);
-  console.log('images[0] =>', images)
   let imagesComponent = <div>before</div>;
   if (images) {
     imagesComponent = (
@@ -26,14 +24,6 @@ const TweetList_semantic = ({ images, onButtonClick }) => {
     )
   }
   return imagesComponent
-}
-
-const TweetList_semantic_new = ({images}) => {
-  return (
-    <div>
-      <h1> HELOOOOOOOOOO </h1>
-    </div>
-  )
 }
 
 export default TweetList_semantic

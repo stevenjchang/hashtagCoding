@@ -3,13 +3,26 @@ import axios from 'axios'
 export const getCraigslistFeed = (dispatch) => {
   return dispatch => axios.get('/craigslist_scraper')
     .then(res => {
-      console.log('res2 =>', res) 
+      console.log('res1 =>', res) 
       return res
     })
     .then(
       data => dispatch({ type: 'GET_CRAIGSLIST_FEED', data}),
       err => dispatch({ type: 'GET_CRAIGSLIST_FEED_ERROR', err})
     )
+}
+
+export const getInstagramFeed = (dispatch) => {
+  return dispatch => axios.get('/images/instagram')
+    .then(res => {
+      console.log('res getInstagram =>', res);
+      return res
+    })
+    .then(
+      data => dispatch({ type: 'GET_INSTAGRAM_FEED', data}),
+      err => dispatch({ type: 'GET_INSTAGRAM_FEED_ERROR', err})
+    )
+    
 }
 
 export const getTwitterFeed = (dispatch) => {
