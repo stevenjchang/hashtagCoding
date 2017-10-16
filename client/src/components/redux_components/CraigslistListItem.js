@@ -2,9 +2,6 @@ import React from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
 const CraigslistListItem = ({item}) => {
-  if (item.images) {
-
-  }
   return (
     <Card.Group>
       <Card fluid={true}>

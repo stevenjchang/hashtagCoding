@@ -7,6 +7,7 @@ import CraigslistList from './redux_components/CraigslistList'
 import Links from './Links.jsx'
 import Menubar from './MenuBar.jsx'
 import SubmitLink from './SubmitLink.jsx'
+import Contentful from '../containers/Contentful'
 import Craigslist from './../containers/Craigslist.jsx'
 import Twitter from './../containers/Twitter'
 import Instagram from '../containers/Instagram'
@@ -20,6 +21,7 @@ const App = ({onClickCraigslist, onClickTwitter}) => (
   <div>
     <Menubar />
     <ButtonMenu />
+    <Contentful />
     <Instagram />
     <Twitter />
     <Craigslist />

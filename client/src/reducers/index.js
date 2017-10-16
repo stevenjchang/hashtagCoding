@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import todos from './todos.jsx'
 import visibilityFilter from './visibilityFilter.jsx'
+import contentful from './contentful'
 import craigslist from './craigslist'
 import instagram from './instagram'
 import twitter from './twitter'
@@ -9,6 +10,7 @@ import twitter from './twitter'
 const todoApp = combineReducers({
   todos,
   visibilityFilter,
+  contentful,
   craigslist,
   instagram,
   twitter
