@@ -3,10 +3,9 @@ import { Button } from 'semantic-ui-react'
 
 const ButtonMenu = ({ onClickCraigslist, onClickInstagram, onClickTwitter }) => (
   <div>
-    <Button inverted color='purple' onClick={onClickCraigslist}>CLL</Button>
-    <Button inverted color='red' onClick={onClickInstagram}>IG</Button>
-    <Button inverted color='blue' onClick={onClickTwitter}>T</Button>
-    <h3>is it work</h3>
+    <Button inverted color='purple' onClick={onClickCraigslist}>CraigsList</Button>
+    <Button inverted color='red' onClick={onClickInstagram}>Instagram</Button>
+    <Button inverted color='blue' onClick={onClickTwitter}>Twitter</Button>
   </div>
 )
 
