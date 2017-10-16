@@ -1,7 +1,6 @@
 import { connect } from 'react-redux'
 import { getInstagramFeed } from '../actions'
 import InstagramList from '../components/InstagramList'
-import Tweetlist from '../components/TweetList_semantic.jsx'
 
 const mapStateToProps = state => {
   return {

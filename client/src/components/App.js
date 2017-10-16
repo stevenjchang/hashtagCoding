@@ -2,7 +2,7 @@ import React from 'react'
 import ButtonMenu from '../containers/ButtonMenu'
 import Contentful from '../containers/Contentful'
 import Craigslist from './../containers/Craigslist'
-import Menubar from './MenuBar.jsx'
+import Menubar from './MenuBar'
 import Instagram from '../containers/Instagram'
 import Twitter from './../containers/Twitter'
 

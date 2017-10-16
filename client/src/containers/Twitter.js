@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { getTwitterFeed } from '../actions'
-import TweetList from '../components/TweetList_semantic.jsx'
+import TwitterList from '../components/TwitterList'
 
 const mapStateToProps = state => {
   return {
@@ -17,6 +17,6 @@ const mapDispatchToProps = dispatch => {
 const Twitter = connect(
   mapStateToProps, 
   mapDispatchToProps
-)(TweetList)
+)(TwitterList)
 
 export default Twitter
