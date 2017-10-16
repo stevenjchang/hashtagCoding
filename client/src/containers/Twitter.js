@@ -4,7 +4,7 @@ import TweetList from '../components/TweetList_semantic.jsx'
 
 const mapStateToProps = state => {
   return {
-    images: state.apiCall
+    images: state.twitter
   }
 }
 

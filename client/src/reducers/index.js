@@ -1,16 +1,17 @@
 import { combineReducers } from 'redux'
 import todos from './todos.jsx'
 import visibilityFilter from './visibilityFilter.jsx'
+import craigslist from './craigslist'
 import instagram from './instagram'
+import twitter from './twitter'
 // import { routerReducer } from 'react-router-redux'
 
-import apiCall from './apiCall.jsx'
-
 const todoApp = combineReducers({
-  apiCall,
   todos,
   visibilityFilter,
-  instagram
+  craigslist,
+  instagram,
+  twitter
   // routing: routerReducer
 })
 

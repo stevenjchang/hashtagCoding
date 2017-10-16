@@ -15,7 +15,7 @@ import CraigslistList from '../components/redux_components/CraigslistList'
 
 const mapStateToProps = state => {
   return {
-    list: state.apiCall
+    list: state.craigslist
   }
 }
 
