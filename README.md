@@ -5,11 +5,13 @@ Hashtag coding is a hobby project site by stevenjchang. It is intended to have s
 # Craigslist Manager
 
 ### What does Craigslist Manager do?
+- I'm currently looking for a ft job and a car, so this helps me. If you are too, then site can also help you.
 
-The Craigslist Manager will allow users to browse the Jobs section and Cars & Trucks section of Craigslist. As a user, I will be able to:
+The Craigslist Manager will allow users to browse the Jobs section, and Cars & Trucks section of Craigslist. As a user, I will be able to:
 
 - Not be shown duplicate posts or posts that have been bumped
-- Declutter my view, by having the ability to Hide any post (which will automatically hide any duplicates or reposts as well)
+- Declutter my view, by having the ability to Hide any post 
+- Have duplicate posts or reposts automatically hidden from me
 - Make memos of posts, and have a record of the post even after it's been deleted on Craigslist
 - Make "Applied" for Jobs and mark "Inquired" for Cars
 - For Cars, be able to track average price of "Inquired" Cars based on model, price, year and mileage.
@@ -18,7 +20,7 @@ The Craigslist Manager will allow users to browse the Jobs section and Cars & Tr
 
 # Tasks / Todos 
  - [x] Build basic server in NodeJS
- - [x] Build react front end
+ - [x] Build React front end
  - [x] Style using Semantic UI React
  - [x] Add navigation bar
  - [x] Link to Instagram API
@@ -27,7 +29,10 @@ The Craigslist Manager will allow users to browse the Jobs section and Cars & Tr
  - [x] Connect to Postgres Db through Knex
  - [x] Connect to Headless CMS API using Contentful
  - [x] Link to Craigslist API
- - [ ] reduxify front end 
+ - [x] Reduxify Front-End
+ - [x] Clean up Craigslist Data using cheerio
+ - [ ] Store clean data in DB
+ - [ ] Automatically check for reposts before storing data
 
 -----
 
