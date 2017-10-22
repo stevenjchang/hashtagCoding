@@ -11,7 +11,7 @@ export const getContentfulFeed = (dispatch) => {
 }
 
 export const getCraigslistFeed = (dispatch) => {
-  return dispatch => axios.get('/craigslist_scraper')
+  return dispatch => axios.get('/craigslist')
     .then(res => res)
     .then(
       data => dispatch({ type: 'GET_CRAIGSLIST_FEED', data }),
