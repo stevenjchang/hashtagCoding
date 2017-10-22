@@ -25,6 +25,7 @@ const getCraigslistFeed = (req, res) => {
         let neighborhood = $(element).find('.result-hood');
         let neighborhoodCleanText = $(neighborhood).text().substring(2, $(neighborhood).text().length - 1);
         carList[index]['neighborhood'] = neighborhoodCleanText;
+        carList[index]['show'] = true;
       })
       return carList;
 
@@ -32,11 +33,11 @@ const getCraigslistFeed = (req, res) => {
     .then(sortedData => {
 
       sortedData.map((item, i) => {
-        let { pid, title, href, images, price, neighborhood, dateTime } = item;
+        let { pid, title, href, images, price, neighborhood, dateTime, show } = item;
 
         db.raw(
-          'INSERT INTO car_listing (pid, title, href, images, price, neighborhood, "dateTime") VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
-          [pid, title, href, images, price, neighborhood, dateTime ]
+          'INSERT INTO car_listing (pid, title, href, images, price, neighborhood, "dateTime", show) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
+          [pid, title, href, images, price, neighborhood, dateTime, show ]
         ).catch(err => console.log('Error! in db.raw - craigslist.js =>', err))
 
       })
