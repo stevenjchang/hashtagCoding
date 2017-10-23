@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getCraigslistFeed } from '../actions'
+import { getCraigslistFeed, ToggleCraigslistItem } from '../actions'
 import CraigslistList from '../components/CraigslistList'
 
 // const getVisibleTodos = (todos, filter) => {
@@ -23,6 +23,9 @@ const mapDispatchToProps = dispatch => {
   return {
     onButtonClick: () => {
       dispatch(getCraigslistFeed())
+    },
+    toggleShowHide: (id) => {
+      dispatch(ToggleCraigslistItem(id))
     }
   }
 }

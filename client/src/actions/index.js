@@ -36,3 +36,7 @@ export const getTwitterFeed = (dispatch) => {
       err => dispatch({ type: 'GET_TWITTER_FEED_ERROR', err })
     )
 }
+
+export const ToggleCraigslistItem = (id) => {
+  return dispatch => dispatch({type: 'TOGGLE_SHOW_HIDE', id})
+}

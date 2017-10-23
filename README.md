@@ -31,8 +31,9 @@ The Craigslist Manager will allow users to browse the Jobs section, and Cars & T
  - [x] Link to Craigslist API
  - [x] Reduxify Front-End
  - [x] Clean up Craigslist Data using cheerio
- - [ ] Store clean data in DB
+ - [x] Store clean data in DB using Knex ORM
  - [ ] Automatically check for reposts before storing data
+ - [ ] Implement Show/Hide Button in Redux
 
 -----
 
