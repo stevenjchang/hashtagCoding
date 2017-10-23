@@ -46,7 +46,7 @@ const getCraigslistFeed = (req, res) => {
     })
     .then(placeholderValue => {
 
-      db('car_listing').select()
+      db('car_listing').orderBy('dateTime', 'desc')
         .then(carList => res.send(carList))  
         .catch(err => console.log('Error! in - db car_listing select - craigslist.js =>', err))
 
