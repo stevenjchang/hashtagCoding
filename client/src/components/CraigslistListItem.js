@@ -1,7 +1,7 @@
-import React from 'react'
+import react from 'react'
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const CraigslistListItem = ({ item, toggleShowHide}) => {
+const CraigslistListItem = ({ item, toggleShowHide }) => {
   return (
     <Card.Group>
       <Card fluid={true}>
@@ -20,4 +20,4 @@ const CraigslistListItem = ({ item, toggleShowHide}) => {
   )
 }
 
-export default CraigslistListItem;
+export default CraigslistListItem
