@@ -4,6 +4,11 @@ const db = require('../../db')
 
 const urlAddress = 'https://sfbay.craigslist.org/search/cto?hasPic=1&min_price=2500&max_price=6000&min_auto_year=2005&auto_title_status=1';
 
+const urlAddressJobs = (jobType , jobCategory = 'cpg', jobCity = 'sfc') => {
+  return ('https://sfbay.craigslist.org/search/' + jobCity + '/'
++ jobCategory);
+};
+
 const getCraigslistFeed = (req, res) => {
   axios.get(urlAddress)
     .then(result => {
@@ -64,5 +69,44 @@ const toggleCraigslistShowHide = (req, res) => {
     .catch(err => console.log('Error! in toggleCraigslistShowHide =>', err))
 }
 
+const getCraigslistJobs = (req, res) => {
+  let { jobType, jobCategory, jobCity } = req.body;
+  axios.get(urlAddressJobs('blank', 'evg'))
+    .then(result => {
+      const $ = cheerio.load(result.data);
+      const jobList = [];
+      $('.result-row').each(function(index, element){
+        jobList[index] = {};
+        let resultImage = $(element).find('.result-image');
+        jobList[index]['pid'] = $(this).attr('data-pid');
+        jobList[index]['href'] = $(resultImage).attr('href')
+        jobList[index]['images'] = $(resultImage).attr('data-ids');
+        let price = $(element).find('.result-meta .result-price');
+        // jobList[index]['price'] = $(price).text();
+        let dateTime = $(element).find('.result-date');
+        jobList[index]['dateTime'] = $(dateTime).attr('datetime');
+        let title = $(element).find('.result-title');
+        jobList[index]['title'] = $(title).text()
+        let neighborhood = $(element).find('.result-hood');
+        let neighborhoodCleanText = $(neighborhood).text().substring(2, $(neighborhood).text().length - 1);
+        jobList[index]['neighborhood'] = neighborhoodCleanText;
+        jobList[index]['show'] = true;
+      })
+      res.send(jobList)
+      // return jobList;
+    })
+    // .then(cleanData => {
+    //   console.log('getCraigslistJobs cleanData =>', cleanData);
+    //   //cleanData.map => db.insert
+    //   return placeholderValue
+    // })
+    // .then(placeholderValue => {
+    //   //db.select
+    //     //then res.send
+    // })
+    .catch(err => console.log('err'))
+}
+
 module.exports.getCraigslistFeed = getCraigslistFeed;
+module.exports.getCraigslistJobs = getCraigslistJobs;
 module.exports.toggleCraigslistShowHide = toggleCraigslistShowHide;
