@@ -6,7 +6,7 @@ export const getContentfulFeed = (dispatch) => {
     .then(res => res.items)
     .then(
       data => dispatch({ type: 'GET_CONTENTFUL_FEED', data }),
-      err => dispatch({ type: 'GET_CONTENTFUL_FEED_ERROR', err })
+      err  => dispatch({ type: 'GET_CONTENTFUL_FEED_ERROR', err })
     )
 }
 
@@ -15,7 +15,7 @@ export const getCraigslistFeed = (dispatch) => {
     .then(res => res)
     .then(
       data => dispatch({ type: 'GET_CRAIGSLIST_FEED', data }),
-      err => dispatch({ type: 'GET_CRAIGSLIST_FEED_ERROR', err })
+      err  => dispatch({ type: 'GET_CRAIGSLIST_FEED_ERROR', err })
     )
 }
 
@@ -24,7 +24,7 @@ export const getInstagramFeed = (dispatch) => {
     .then(res => res)
     .then(
       data => dispatch({ type: 'GET_INSTAGRAM_FEED', data }),
-      err => dispatch({ type: 'GET_INSTAGRAM_FEED_ERROR', err })
+      err  => dispatch({ type: 'GET_INSTAGRAM_FEED_ERROR', err })
     )
 }
 
@@ -33,6 +33,17 @@ export const getTwitterFeed = (dispatch) => {
     .then(res => res)
     .then(
       data => dispatch({ type: 'GET_TWITTER_FEED', data }),
-      err => dispatch({ type: 'GET_TWITTER_FEED_ERROR', err })
+      err  => dispatch({ type: 'GET_TWITTER_FEED_ERROR', err })
     )
+}
+
+export const ToggleCraigslistItem = (id, showStatus) => {
+  return dispatch => axios.post('/craigslist/toggle_post/'+id, {showStatus})
+    .then(res => res)
+    .then(
+      data => dispatch({type: 'TOGGLE_SHOW_HIDE', id}),
+      err  => dispatch({type: 'TOGGLE_SHOW_HIDE_ERROR', err})
+    )
+
+  dispatch({type: 'TOGGLE_SHOW_HIDE', id})
 }
