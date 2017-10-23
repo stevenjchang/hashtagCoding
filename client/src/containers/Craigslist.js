@@ -24,8 +24,8 @@ const mapDispatchToProps = dispatch => {
     onButtonClick: () => {
       dispatch(getCraigslistFeed())
     },
-    toggleShowHide: (id) => {
-      dispatch(ToggleCraigslistItem(id))
+    toggleShowHide: (id, showStatus) => {
+      dispatch(ToggleCraigslistItem(id, showStatus))
     }
   }
 }

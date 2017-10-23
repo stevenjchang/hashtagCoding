@@ -12,7 +12,7 @@ const CraigslistListItem = ({ item, toggleShowHide}) => {
           <a href={item.href}><p>link</p></a>
           <p>id: {item.id} </p>
           <p>showStatus: {item.show.toString()}</p>
-          <button onClick={() => toggleShowHide(item.id)}>Hide Post</button>
+          <button onClick={() => toggleShowHide(item.id, item.show)}>Hide Post</button>
           <br></br>
         </Card.Content>
       </Card>

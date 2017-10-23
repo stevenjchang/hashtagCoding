@@ -17,6 +17,7 @@ app.use(bodyParser.json());
 app.get('/images/instagram', api.instagram.getInstagramUserImages);
 app.get('/images/twitter', api.twitter);
 app.get('/craigslist', api.craigslist.getCraigslistFeed);
+app.post('/craigslist/toggle_post/:id', api.craigslist.toggleCraigslistShowHide);
 app.get('/craigslist_scraper', api.craigslist_scraper.getCraigslistScrapper);
 app.get('/links', api.links.getLinksFromDb);
 app.post('/links', api.links.postLinksToDb);

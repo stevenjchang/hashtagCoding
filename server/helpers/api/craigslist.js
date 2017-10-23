@@ -54,4 +54,15 @@ const getCraigslistFeed = (req, res) => {
     .catch(err => console.log('Error! in axios / get urlAddress - craigslist.js =>', err))
 }
 
+const toggleCraigslistShowHide = (req, res) => {
+  db('car_listing').where('id', '=', req.params.id).update({show: !req.body.showStatus})
+    .then(result => {
+      db('car_listing').where('id', '=', req.params.id).select()
+        .then(postSuccess => console.log('Posting Successful in toggleCraigslistShowHide =>', postSuccess))
+      res.send('success')
+    })
+    .catch(err => console.log('Error! in toggleCraigslistShowHide =>', err))
+}
+
 module.exports.getCraigslistFeed = getCraigslistFeed;
+module.exports.toggleCraigslistShowHide = toggleCraigslistShowHide;
