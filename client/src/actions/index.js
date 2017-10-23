@@ -41,9 +41,20 @@ export const ToggleCraigslistItem = (id, showStatus) => {
   return dispatch => axios.post('/craigslist/toggle_post/'+id, {showStatus})
     .then(res => res)
     .then(
-      data => dispatch({type: 'TOGGLE_SHOW_HIDE', id}),
-      err  => dispatch({type: 'TOGGLE_SHOW_HIDE_ERROR', err})
+      data => dispatch({ type: 'TOGGLE_SHOW_HIDE', id }),
+      err  => dispatch({ type: 'TOGGLE_SHOW_HIDE_ERROR', err })
     )
 
   dispatch({type: 'TOGGLE_SHOW_HIDE', id})
+}
+
+export const getCraigslistJobs = (jobType, jobCategory) => {
+  return dispatch => axios.get('/craigslist/jobs', {jobType, jobCategory})
+    .then(res => {
+      console.log('Success getCraigslistJobs =>', res);
+    })
+    .then(
+      data => dispatch({ type: 'GET_CRAIGSLIST_JOBS', data }),
+      err  => dispatch({ type: 'GET_CRAIGSLIST_JOBS_ERROR', err})
+    )
 }

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { getContentfulFeed, getCraigslistFeed, getInstagramFeed, getTwitterFeed } from '../actions'
+import { getContentfulFeed, getCraigslistFeed, getCraigslistJobs, getInstagramFeed, getTwitterFeed } from '../actions'
 import ButtonMenu from '../components/ButtonMenu'
 
 const mapStateToProps = state => {
@@ -12,6 +12,7 @@ const mapDispatchToProps = dispatch => {
   return {
     onClickContentful: () => dispatch(getContentfulFeed()),
     onClickCraigslist: () => dispatch(getCraigslistFeed()),
+    onClick_getCraigslistJobs: () => dispatch(getCraigslistJobs()),
     onClickInstagram: () => dispatch(getInstagramFeed()),
     onClickTwitter: () => dispatch(getTwitterFeed())
   }
