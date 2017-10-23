@@ -39,6 +39,7 @@ The Craigslist Manager will allow users to browse the Jobs section, and Cars & T
  - [ ] Deploy
  - [ ] Implement Save favorite Posts button / functionality
  - [ ] Show History of Hidden posts to allow un-hide functionality
+ - [ ] Check for reposts before storing data (using 'title' + 'price')
 
 -----
 
