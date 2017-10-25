@@ -1,5 +1,5 @@
 const Twitter = require('twitter')
-const ENV = require('../../../apikey.json')
+// const ENV = require('../../../apikey.json')
 const fs = require('../fs')
 
 var twitter = new Twitter({
