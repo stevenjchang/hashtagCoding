@@ -7,7 +7,7 @@ const PORT = process.env.PORT || '3000'
 const app = express()  
 const bodyParser = require('body-parser');
 const api = require('../server/helpers/api')
-const dummyData = require('../database/dummyData').dummyData
+// const dummyData = require('../database/dummyData').dummyData
 const db = require('./db')
 
 app.use(express.static(path.join(__dirname, '../public')));
