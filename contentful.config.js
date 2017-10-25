@@ -1,5 +1,5 @@
 import {createClient} from 'contentful'
-import ENV from './apikey.json'
+// import ENV from './apikey.json'
 
 const client = createClient({
   space: ENV.CONTENTFUL_SPACE_ID,
