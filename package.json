@@ -8,7 +8,7 @@
     "build": "webpack -p",
     "start": "node server/index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "postinstall": "webpack -p"
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
