@@ -50,9 +50,7 @@ export const ToggleCraigslistItem = (id, showStatus) => {
 
 export const getCraigslistJobs = (jobType, jobCategory) => {
   return dispatch => axios.get('/craigslist/jobs', {jobType, jobCategory})
-    .then(res => {
-      console.log('Success getCraigslistJobs =>', res);
-    })
+    .then(res => res)
     .then(
       data => dispatch({ type: 'GET_CRAIGSLIST_JOBS', data }),
       err  => dispatch({ type: 'GET_CRAIGSLIST_JOBS_ERROR', err})
