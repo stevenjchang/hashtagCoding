@@ -38,7 +38,7 @@ module.exports = {
   // target: "node"
   plugins: [  
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     devFlagPlugin
   ],
 };  
