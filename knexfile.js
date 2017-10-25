@@ -2,15 +2,17 @@ module.exports = {
 
   development: {
     client: 'postgresql',
-    connection: {
-      database: 'blog_dev'
-    }
+    connection: process.env.DATABASE_URL + '? ssl=true',
+    // connection: {
+    //   database: 'blog_dev'
+    // }
   },
   production: {
     client: 'postgresql',
-    connection: {
-      database: 'blog'
-    }
+    connection: process.env.DATABASE_URL + '? ssl=true',
+    // connection: {
+    //   database: 'blog'
+    // }
   }
   
 }
