@@ -1,8 +1,15 @@
 const axios = require('axios');
 const cheerio = require('cheerio');
-const db = require('../../db')
+const db = require('../../db');
+const scraper = require('../scraper/');
+const { scrapeCraigslist } = scraper.craigslist;
 
 const urlAddress = 'https://sfbay.craigslist.org/search/cto?hasPic=1&min_price=2500&max_price=6000&min_auto_year=2005&auto_title_status=1';
+
+const urlAddressJobs = (jobType , jobCategory = 'cpg', jobCity = 'sfc') => {
+  return ('https://sfbay.craigslist.org/search/' + jobCity + '/'
++ jobCategory);
+};
 
 const getCraigslistFeed = (req, res) => {
   axios.get(urlAddress)
@@ -31,24 +38,22 @@ const getCraigslistFeed = (req, res) => {
 
     })
     .then(sortedData => {
-
       sortedData.map((item, i) => {
         let { pid, title, href, images, price, neighborhood, dateTime, show } = item;
 
         db.raw(
           'INSERT INTO car_listing (pid, title, href, images, price, neighborhood, "dateTime", show) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
-          [pid, title, href, images, price, neighborhood, dateTime, show ]
+          [ pid, title, href, images, price, neighborhood, dateTime, show ]
         ).catch(err => console.log('Error! in db.raw - craigslist.js =>', err))
 
       })
       return [];
-
     })
     .then(placeholderValue => {
 
       db('car_listing').orderBy('dateTime', 'desc')
         .then(carList => res.send(carList))  
-        .catch(err => console.log('Error! in - db car_listing select - craigslist.js =>', err))
+        .catch(err => console.log('Error! in db car_listing - craigslist.js =>', err))
 
     })
     .catch(err => console.log('Error! in axios / get urlAddress - craigslist.js =>', err))
@@ -64,5 +69,37 @@ const toggleCraigslistShowHide = (req, res) => {
     .catch(err => console.log('Error! in toggleCraigslistShowHide =>', err))
 }
 
+const getCraigslistJobs = (req, res) => {
+  let { jobType, jobCategory, jobCity } = req.body;
+  axios.get(urlAddressJobs('blank', 'evg'))
+    .then(result => {
+      return scrapeCraigslist(result.data)
+    })
+    .then(sortedData => {
+      sortedData.map((item, i) => {
+        let { pid, title, href, images, price, neighborhood, site, favorite, note, show, dateTime } = item;
+        images = images || '';
+        neighborhood = neighborhood || ''
+        db.raw(
+          'INSERT INTO job_listing (pid, title, href, images, neighborhood, show, "dateTime") VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
+          [ pid, title, href, images, neighborhood, show, dateTime ]
+        )
+        .then(res => res)
+        .catch(err =>
+          console.log('Error! in db raw getCraigslistJobs =>', err)
+        )
+      })
+      return [];
+    })
+    .then(placeholderValue => {
+      db('job_listing').orderBy('dateTime', 'desc')
+        .then(jobList => res.send(jobList))  
+        .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err))
+
+    })
+    .catch(err => console.log('Error! in axios / get urlAddresJobs - craigslist.js =>', err))
+}
+
 module.exports.getCraigslistFeed = getCraigslistFeed;
+module.exports.getCraigslistJobs = getCraigslistJobs;
 module.exports.toggleCraigslistShowHide = toggleCraigslistShowHide;
