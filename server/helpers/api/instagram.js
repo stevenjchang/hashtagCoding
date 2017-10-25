@@ -1,6 +1,7 @@
 const Instagram = require('node-instagram').default
 const fs = require('../fs')
 // const ENV = require('../../../apikey.json')
+const ENV = process.env;
 
 // Create a new instance. 
 const instagram = new Instagram({

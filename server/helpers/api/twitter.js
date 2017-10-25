@@ -1,6 +1,7 @@
 const Twitter = require('twitter')
 // const ENV = require('../../../apikey.json')
 const fs = require('../fs')
+const ENV = process.env;
 
 var twitter = new Twitter({
   consumer_key: ENV.TWITTER_CONSUMER_KEY,
