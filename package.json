@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
+    "heroku-postbuild": "npm run build",
     "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "npm run build"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
