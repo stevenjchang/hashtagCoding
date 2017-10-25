@@ -5,5 +5,12 @@ module.exports = {
     connection: {
       database: 'blog_dev'
     }
+  },
+  production: {
+    client: 'postgresql',
+    connection: {
+      database: 'blog'
+    }
   }
+  
 }
