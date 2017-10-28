@@ -1,0 +1,16 @@
+webpackHotUpdate(0,{
+
+/***/ 950:
+/*!*********************************************!*\
+  !*** ./client/src/containers/ButtonMenu.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ 39);\n\nvar _actions = __webpack_require__(/*! ../actions */ 48);\n\nvar _ButtonMenu = __webpack_require__(/*! ../components/ButtonMenu */ 951);\n\nvar _ButtonMenu2 = _interopRequireDefault(_ButtonMenu);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {};\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onClickContentful: function onClickContentful() {\n      return dispatch((0, _actions.getContentfulFeed)());\n    },\n    onClickCraigslist: function onClickCraigslist() {\n      return dispatch((0, _actions.getCraigslistFeed)());\n    },\n    onClickInstagram: function onClickInstagram() {\n      return dispatch((0, _actions.getInstagramFeed)());\n    },\n    onClickTwitter: function onClickTwitter() {\n      return dispatch((0, _actions.getTwitterFeed)());\n    }\n  };\n};\n\nvar Button = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ButtonMenu2.default);\n\nexports.default = Button;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTUwLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2NsaWVudC9zcmMvY29udGFpbmVycy9CdXR0b25NZW51LmpzP2Y1ZDgiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29ubmVjdCB9IGZyb20gJ3JlYWN0LXJlZHV4J1xuaW1wb3J0IHsgZ2V0Q29udGVudGZ1bEZlZWQsIGdldENyYWlnc2xpc3RGZWVkLCBnZXRJbnN0YWdyYW1GZWVkLCBnZXRUd2l0dGVyRmVlZCB9IGZyb20gJy4uL2FjdGlvbnMnXG5pbXBvcnQgQnV0dG9uTWVudSBmcm9tICcuLi9jb21wb25lbnRzL0J1dHRvbk1lbnUnXG5cbmNvbnN0IG1hcFN0YXRlVG9Qcm9wcyA9IHN0YXRlID0+IHtcbiAgcmV0dXJuIHtcblxuICB9XG59XG5cbmNvbnN0IG1hcERpc3BhdGNoVG9Qcm9wcyA9IGRpc3BhdGNoID0+IHtcbiAgcmV0dXJuIHtcbiAgICBvbkNsaWNrQ29udGVudGZ1bDogKCkgPT4gZGlzcGF0Y2goZ2V0Q29udGVudGZ1bEZlZWQoKSksXG4gICAgb25DbGlja0NyYWlnc2xpc3Q6ICgpID0+IGRpc3BhdGNoKGdldENyYWlnc2xpc3RGZWVkKCkpLFxuICAgIG9uQ2xpY2tJbnN0YWdyYW06ICgpID0+IGRpc3BhdGNoKGdldEluc3RhZ3JhbUZlZWQoKSksXG4gICAgb25DbGlja1R3aXR0ZXI6ICgpID0+IGRpc3BhdGNoKGdldFR3aXR0ZXJGZWVkKCkpXG4gIH1cbn1cblxuY29uc3QgQnV0dG9uID0gY29ubmVjdChcbiAgbWFwU3RhdGVUb1Byb3BzLFxuICBtYXBEaXNwYXRjaFRvUHJvcHNcbikoQnV0dG9uTWVudSlcblxuZXhwb3J0IGRlZmF1bHQgQnV0dG9uXG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gY2xpZW50L3NyYy9jb250YWluZXJzL0J1dHRvbk1lbnUuanMiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUNBO0FBR0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQUE7QUFKQTtBQU1BO0FBQ0E7QUFDQTtBQUNBO0FBSUEiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///950\n");
+
+/***/ })
+
+})

@@ -1,0 +1,16 @@
+webpackHotUpdate(0,{
+
+/***/ 942:
+/*!******************************************!*\
+  !*** ./client/src/containers/Twitter.js ***!
+  \******************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ 69);\n\nvar _actions = __webpack_require__(/*! ../actions */ 84);\n\nvar _TweetList_semantic = __webpack_require__(/*! ../components/TweetList_semantic.jsx */ 943);\n\nvar _TweetList_semantic2 = _interopRequireDefault(_TweetList_semantic);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {\n    images: []\n  };\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onButtonClick: function onButtonClick() {\n      dispatch((0, _actions.getTwitterFeed)());\n    }\n  };\n};\n\nvar Twitter = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_TweetList_semantic2.default);\n\n// const mapStateToProps = state => {\n//   return {\n//     list: state.apiCall\n//   }\n// }\n\n// const mapDispatchToProps = dispatch => {\n//   return {\n//     onButtonClick: () => {\n//       dispatch(getCraigslistFeed())\n//     }\n//   }\n// }\n\n\n// const Twitter = connect()(TweetList)\n\nexports.default = Twitter;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTQyLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2NsaWVudC9zcmMvY29udGFpbmVycy9Ud2l0dGVyLmpzPzc4YzciXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29ubmVjdCB9IGZyb20gJ3JlYWN0LXJlZHV4J1xuaW1wb3J0IHsgZ2V0VHdpdHRlckZlZWQgfSBmcm9tICcuLi9hY3Rpb25zJ1xuaW1wb3J0IFR3ZWV0TGlzdCBmcm9tICcuLi9jb21wb25lbnRzL1R3ZWV0TGlzdF9zZW1hbnRpYy5qc3gnXG5cbmNvbnN0IG1hcFN0YXRlVG9Qcm9wcyA9IHN0YXRlID0+IHtcbiAgcmV0dXJuIHtcbiAgICBpbWFnZXM6IFtdXG4gIH1cbn1cblxuY29uc3QgbWFwRGlzcGF0Y2hUb1Byb3BzID0gZGlzcGF0Y2ggPT4ge1xuICByZXR1cm4ge1xuICAgIG9uQnV0dG9uQ2xpY2s6ICgpID0+IHtcbiAgICAgIGRpc3BhdGNoKGdldFR3aXR0ZXJGZWVkKCkpO1xuICAgIH1cbiAgfVxufVxuXG5jb25zdCBUd2l0dGVyID0gY29ubmVjdChcbiAgbWFwU3RhdGVUb1Byb3BzLCBcbiAgbWFwRGlzcGF0Y2hUb1Byb3BzXG4pKFR3ZWV0TGlzdClcblxuLy8gY29uc3QgbWFwU3RhdGVUb1Byb3BzID0gc3RhdGUgPT4ge1xuLy8gICByZXR1cm4ge1xuLy8gICAgIGxpc3Q6IHN0YXRlLmFwaUNhbGxcbi8vICAgfVxuLy8gfVxuXG4vLyBjb25zdCBtYXBEaXNwYXRjaFRvUHJvcHMgPSBkaXNwYXRjaCA9PiB7XG4vLyAgIHJldHVybiB7XG4vLyAgICAgb25CdXR0b25DbGljazogKCkgPT4ge1xuLy8gICAgICAgZGlzcGF0Y2goZ2V0Q3JhaWdzbGlzdEZlZWQoKSlcbi8vICAgICB9XG4vLyAgIH1cbi8vIH1cblxuXG5cbi8vIGNvbnN0IFR3aXR0ZXIgPSBjb25uZWN0KCkoVHdlZXRMaXN0KVxuXG5leHBvcnQgZGVmYXVsdCBUd2l0dGVyXG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gY2xpZW50L3NyYy9jb250YWluZXJzL1R3aXR0ZXIuanMiXSwibWFwcGluZ3MiOiI7Ozs7OztBQUFBO0FBQ0E7QUFBQTtBQUNBO0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUNBO0FBQ0E7QUFEQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBSEE7QUFLQTtBQUNBO0FBQ0E7QUFDQTtBQUlBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUVBO0FBQ0E7QUFDQSIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///942\n");
+
+/***/ })
+
+})

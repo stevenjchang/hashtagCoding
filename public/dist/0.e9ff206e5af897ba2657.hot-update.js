@@ -1,0 +1,16 @@
+webpackHotUpdate(0,{
+
+/***/ 587:
+/*!*********************************************!*\
+  !*** ./client/src/containers/ButtonMenu.js ***!
+  \*********************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _reactRedux = __webpack_require__(/*! react-redux */ 70);\n\nvar _actions = __webpack_require__(/*! ../actions */ 84);\n\nvar _ButtonMenu = __webpack_require__(/*! ../components/ButtonMenu */ 608);\n\nvar _ButtonMenu2 = _interopRequireDefault(_ButtonMenu);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar mapStateToProps = function mapStateToProps(state) {\n  return {};\n};\n\nvar mapDispatchToProps = function mapDispatchToProps(dispatch) {\n  return {\n    onClickContentful: function onClickContentful() {\n      return dispatch((0, _actions.getContentfulFeed)());\n    },\n    onClickCraigslist: function onClickCraigslist() {\n      return dispatch((0, _actions.getCraigslistFeed)());\n    },\n    onClick_getCraigslistJobs: function onClick_getCraigslistJobs() {\n      return dispatch((0, _actions.getCraigslistJobs)());\n    },\n    onClickInstagram: function onClickInstagram() {\n      return dispatch((0, _actions.getInstagramFeed)());\n    },\n    onClickTwitter: function onClickTwitter() {\n      return dispatch((0, _actions.getTwitterFeed)());\n    }\n  };\n};\n\nvar Button = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_ButtonMenu2.default);\n\nexports.default = Button;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiNTg3LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2NsaWVudC9zcmMvY29udGFpbmVycy9CdXR0b25NZW51LmpzP2Y1ZDgiXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgY29ubmVjdCB9IGZyb20gJ3JlYWN0LXJlZHV4J1xuaW1wb3J0IHsgZ2V0Q29udGVudGZ1bEZlZWQsIGdldENyYWlnc2xpc3RGZWVkLCBnZXRDcmFpZ3NsaXN0Sm9icywgZ2V0SW5zdGFncmFtRmVlZCwgZ2V0VHdpdHRlckZlZWQgfSBmcm9tICcuLi9hY3Rpb25zJ1xuaW1wb3J0IEJ1dHRvbk1lbnUgZnJvbSAnLi4vY29tcG9uZW50cy9CdXR0b25NZW51J1xuXG5jb25zdCBtYXBTdGF0ZVRvUHJvcHMgPSBzdGF0ZSA9PiB7XG4gIHJldHVybiB7XG5cbiAgfVxufVxuXG5jb25zdCBtYXBEaXNwYXRjaFRvUHJvcHMgPSBkaXNwYXRjaCA9PiB7XG4gIHJldHVybiB7XG4gICAgb25DbGlja0NvbnRlbnRmdWw6ICgpID0+IGRpc3BhdGNoKGdldENvbnRlbnRmdWxGZWVkKCkpLFxuICAgIG9uQ2xpY2tDcmFpZ3NsaXN0OiAoKSA9PiBkaXNwYXRjaChnZXRDcmFpZ3NsaXN0RmVlZCgpKSxcbiAgICBvbkNsaWNrX2dldENyYWlnc2xpc3RKb2JzOiAoKSA9PiBkaXNwYXRjaChnZXRDcmFpZ3NsaXN0Sm9icygpKSxcbiAgICBvbkNsaWNrSW5zdGFncmFtOiAoKSA9PiBkaXNwYXRjaChnZXRJbnN0YWdyYW1GZWVkKCkpLFxuICAgIG9uQ2xpY2tUd2l0dGVyOiAoKSA9PiBkaXNwYXRjaChnZXRUd2l0dGVyRmVlZCgpKVxuICB9XG59XG5cbmNvbnN0IEJ1dHRvbiA9IGNvbm5lY3QoXG4gIG1hcFN0YXRlVG9Qcm9wcyxcbiAgbWFwRGlzcGF0Y2hUb1Byb3BzXG4pKEJ1dHRvbk1lbnUpXG5cbmV4cG9ydCBkZWZhdWx0IEJ1dHRvblxuXG5cblxuLy8gV0VCUEFDSyBGT09URVIgLy9cbi8vIGNsaWVudC9zcmMvY29udGFpbmVycy9CdXR0b25NZW51LmpzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUNBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7Ozs7O0FBQ0E7QUFDQTtBQUdBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBTEE7QUFPQTtBQUNBO0FBQ0E7QUFDQTtBQUlBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///587\n");
+
+/***/ })
+
+})

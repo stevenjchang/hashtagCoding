@@ -1,0 +1,16 @@
+webpackHotUpdate(0,{
+
+/***/ 957:
+/*!*************************************************!*\
+  !*** ./client/src/components/CraigslistList.js ***!
+  \*************************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ 1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _propTypes = __webpack_require__(/*! prop-types */ 60);\n\nvar _propTypes2 = _interopRequireDefault(_propTypes);\n\nvar _semanticUiReact = __webpack_require__(/*! semantic-ui-react */ 49);\n\nvar _CraigslistListItem = __webpack_require__(/*! ./CraigslistListItem */ 958);\n\nvar _CraigslistListItem2 = _interopRequireDefault(_CraigslistListItem);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar CraigslistList = function CraigslistList(_ref) {\n  var list = _ref.list,\n      onButtonClick = _ref.onButtonClick;\n\n  var renderedList = list[0] ? list[0] : [];\n  return _react2.default.createElement(\n    _semanticUiReact.Grid,\n    { centered: true, divided: 'vertically' },\n    _react2.default.createElement(\n      _semanticUiReact.Grid.Row,\n      { columns: 3, stretched: true, textAlign: 'center' },\n      renderedList.map(function (item, i) {\n        return _react2.default.createElement(\n          _semanticUiReact.Grid.Column,\n          { key: i },\n          _react2.default.createElement(_CraigslistListItem2.default, { item: item, key: i })\n        );\n      })\n    )\n  );\n};\n\nexports.default = CraigslistList;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTU3LmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2NsaWVudC9zcmMvY29tcG9uZW50cy9DcmFpZ3NsaXN0TGlzdC5qcz9kNDVkIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCBQcm9wVHlwZXMgZnJvbSAncHJvcC10eXBlcydcbmltcG9ydCB7IEdyaWQsIEJ1dHRvbiwgSW1hZ2UgfSBmcm9tICdzZW1hbnRpYy11aS1yZWFjdCdcbmltcG9ydCBDcmFpZ3NsaXN0TGlzdEl0ZW0gZnJvbSAnLi9DcmFpZ3NsaXN0TGlzdEl0ZW0nXG5cbmNvbnN0IENyYWlnc2xpc3RMaXN0ID0gKHsgbGlzdCwgb25CdXR0b25DbGljayB9KSA9PiB7XG4gIGxldCByZW5kZXJlZExpc3QgPSBsaXN0WzBdID8gbGlzdFswXSA6IFtdO1xuICByZXR1cm4gKFxuXG4gICAgICA8R3JpZCBjZW50ZXJlZD17dHJ1ZX0gZGl2aWRlZD0ndmVydGljYWxseSc+XG4gICAgICAgIDxHcmlkLlJvdyBjb2x1bW5zPXszfSBzdHJldGNoZWQ9e3RydWV9IHRleHRBbGlnbj17J2NlbnRlcid9PlxuICAgICAgICAgIHtyZW5kZXJlZExpc3QubWFwKChpdGVtLCBpKSA9PiB7XG4gICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICA8R3JpZC5Db2x1bW4ga2V5PXtpfT5cbiAgICAgICAgICAgICAgICA8Q3JhaWdzbGlzdExpc3RJdGVtIGl0ZW09e2l0ZW19IGtleT17aX0gLz5cbiAgICAgICAgICAgICAgPC9HcmlkLkNvbHVtbj5cbiAgICAgICAgICAgIClcbiAgICAgICAgICB9KX1cbiAgICAgICAgPC9HcmlkLlJvdz5cbiAgICAgIDwvR3JpZD5cblxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IENyYWlnc2xpc3RMaXN0XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gY2xpZW50L3NyYy9jb21wb25lbnRzL0NyYWlnc2xpc3RMaXN0LmpzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBO0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFFQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFDQTtBQURBO0FBSUE7QUFQQTtBQURBO0FBYUE7QUFDQTtBQUNBIiwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///957\n");
+
+/***/ })
+
+})

@@ -1,0 +1,16 @@
+webpackHotUpdate(0,{
+
+/***/ 962:
+/*!**********************************************!*\
+  !*** ./client/src/components/TwitterList.js ***!
+  \**********************************************/
+/*! no static exports found */
+/*! all exports used */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\n\nvar _react = __webpack_require__(/*! react */ 1);\n\nvar _react2 = _interopRequireDefault(_react);\n\nvar _semanticUiReact = __webpack_require__(/*! semantic-ui-react */ 49);\n\nvar _TwitterListItem = __webpack_require__(/*! ./TwitterListItem */ 963);\n\nvar _TwitterListItem2 = _interopRequireDefault(_TwitterListItem);\n\nfunction _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }\n\nvar TwitterList = function TwitterList(_ref) {\n  var images = _ref.images,\n      onButtonClick = _ref.onButtonClick;\n\n  var renderedImages = images[0] ? images[0] : [];\n  return _react2.default.createElement(\n    'div',\n    null,\n    _react2.default.createElement(\n      _semanticUiReact.Grid,\n      { centered: true },\n      _react2.default.createElement(\n        _semanticUiReact.Grid.Row,\n        { columns: 3, divided: true, stretched: true, textAlign: \"right\" },\n        renderedImages.map(function (item, i) {\n          return _react2.default.createElement(\n            _semanticUiReact.Grid.Column,\n            null,\n            _react2.default.createElement(_TwitterListItem2.default, { image: item.image, key: i, text: item.text })\n          );\n        })\n      )\n    )\n  );\n};\n\nexports.default = TwitterList;//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiOTYyLmpzIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vL2NsaWVudC9zcmMvY29tcG9uZW50cy9Ud2l0dGVyTGlzdC5qcz9iYjQ2Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCdcbmltcG9ydCB7IEdyaWQsIEJ1dHRvbiwgSW1hZ2UgfSBmcm9tICdzZW1hbnRpYy11aS1yZWFjdCdcbmltcG9ydCBUd2l0dGVyTGlzdEl0ZW0gZnJvbSAnLi9Ud2l0dGVyTGlzdEl0ZW0nXG5cbmNvbnN0IFR3aXR0ZXJMaXN0ID0gKHsgaW1hZ2VzLCBvbkJ1dHRvbkNsaWNrIH0pID0+IHtcbiAgbGV0IHJlbmRlcmVkSW1hZ2VzID0gaW1hZ2VzWzBdID8gaW1hZ2VzWzBdIDogW107XG4gIHJldHVybiAoXG4gICAgPGRpdj5cbiAgICAgIDxHcmlkIGNlbnRlcmVkPXt0cnVlfT4gXG4gICAgICAgIDxHcmlkLlJvdyBjb2x1bW5zPXszfSBkaXZpZGVkPXt0cnVlfSBzdHJldGNoZWQ9e3RydWV9IHRleHRBbGlnbj17XCJyaWdodFwifT5cbiAgICAgICAgICB7cmVuZGVyZWRJbWFnZXMubWFwKChpdGVtLCBpKSA9PiB7XG4gICAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgICA8R3JpZC5Db2x1bW4+XG4gICAgICAgICAgICAgICAgPFR3aXR0ZXJMaXN0SXRlbSBpbWFnZT17aXRlbS5pbWFnZX0ga2V5PXtpfSB0ZXh0PXtpdGVtLnRleHR9IC8+XG4gICAgICAgICAgICAgIDwvR3JpZC5Db2x1bW4+XG4gICAgICAgICAgICApXG4gICAgICAgICAgfSl9XG4gICAgICAgIDwvR3JpZC5Sb3c+XG4gICAgICA8L0dyaWQ+IFxuICAgIDwvZGl2PlxuICApXG59XG5cbmV4cG9ydCBkZWZhdWx0IFR3aXR0ZXJMaXN0XG5cblxuXG4vLyBXRUJQQUNLIEZPT1RFUiAvL1xuLy8gY2xpZW50L3NyYy9jb21wb25lbnRzL1R3aXR0ZXJMaXN0LmpzIl0sIm1hcHBpbmdzIjoiOzs7Ozs7QUFBQTtBQUNBOzs7QUFBQTtBQUNBO0FBQUE7QUFDQTs7Ozs7QUFDQTtBQUFBO0FBQUE7QUFDQTtBQUFBO0FBQ0E7QUFDQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFBQTtBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQUE7QUFDQTtBQURBO0FBSUE7QUFQQTtBQURBO0FBREE7QUFjQTtBQUNBO0FBQ0EiLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///962\n");
+
+/***/ })
+
+})
