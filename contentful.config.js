@@ -1,9 +1,6 @@
 import {createClient} from 'contentful'
 // import ENV from './apikey.json'
 // const ENV = process.env;
-const ENV = process.env || require('./apikey.json')
-const showENV = () => console.log('ENV ======>', ENV)
-showENV();
 
 // const client = createClient({
 //   space: ENV.CONTENTFUL_SPACE_ID,
