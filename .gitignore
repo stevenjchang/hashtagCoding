@@ -2,4 +2,3 @@
 node_modules
 apikey.json
 database/
-public/dist
