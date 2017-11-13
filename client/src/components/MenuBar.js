@@ -2,13 +2,20 @@ import React from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 
 class MenuBar extends React.Component {
-  state = { activeItem: 'home' }
+  constructor(props) {
+    super(props) 
+    this.state = { activeItem: 'home' }
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  }
+
+  handleItemClick(e, { name }) {
+    this.setState({ activeItem: name })
+    console.log('state =>', this.state)
+  }
 
   render() {
     const { activeItem } = this.state
-
+    console.log('222=>',this.state)
     return (
       <Segment inverted color='blue'>
         <Menu inverted secondary color='blue' inverted widths={7}>
