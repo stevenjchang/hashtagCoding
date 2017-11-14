@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CraigslistJobs_Item should render as expected snapshot matches 1`] = `
+<Grid
+  centered={true}
+  divided="vertically"
+>
+  <GridRow
+    columns={1}
+    stretched={true}
+    textAlign="left"
+  />
+</Grid>
+`;

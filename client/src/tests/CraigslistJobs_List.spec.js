@@ -14,14 +14,12 @@ import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
 configure({ adapter: new Adapter() });
 
-
-describe('CraigslistJobs_Item rendering correctly', () => {
+describe('CraigslistJobs_Item should render as expected', () => {
   const component = shallow(<CraigslistJobs_Item />)
   const tree = toJson(component)
 
   it('snapshot matches', () => {
     expect(tree).toMatchSnapshot()
-    // expect(tree2).toMatchSnapshot()
   })
-
+  
 });
