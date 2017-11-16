@@ -15,6 +15,23 @@ module.exports = {
   node: {
     __dirname: true,
   },
+  devServer: {
+    hot: true,
+    inline: true,
+    port: 3000,
+    historyApiFallback: true,
+  },
+  externals: {
+    'cheerio': 'window',
+    'react/lib/ExecutionEnvironment': true,
+    'react/lib/ReactContext': true,
+  },
+  stats: {
+    colors: true,
+    modules: true,
+    reasons: true,
+    errorDetails: true
+  },
   module: {
     loaders: [
       {

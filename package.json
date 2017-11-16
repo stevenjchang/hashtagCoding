@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "node server/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server/index.js",
+    "test": "jest",
+    "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --content-base ./"
   },
   "repository": {
     "type": "git",
@@ -57,9 +58,27 @@
     "webpack": "^3.5.4"
   },
   "devDependencies": {
-
+    "babel-jest": "^21.2.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "enzyme": "^3.1.1",
+    "enzyme-adapter-react-15": "^1.0.5",
+    "enzyme-to-json": "^3.2.2",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^21.2.1",
+    "jsdom": "^11.3.0",
+    "mocha": "^4.0.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^15.6.2",
+    "redux-mock-store": "^1.3.0",
+    "webpack-dev-server": "^2.9.4"
   },
   "engines": {
     "node": "8.2.1"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
   }
 }
