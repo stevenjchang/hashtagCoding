@@ -1,5 +1,4 @@
 import React from 'react'
-import { Button } from 'semantic-ui-react'
 
 class ButtonMenu extends React.Component {
   constructor(props) {
@@ -11,12 +10,12 @@ class ButtonMenu extends React.Component {
   render() {
     return (
       <div>
-        <Button inverted color='purple' onClick={this.props.onClickCraigslist}>CraigsList</Button>
-        <Button inverted color='red' onClick={this.props.onClickInstagram}>Instagram</Button>
-        <Button inverted color='blue' onClick={this.props.onClickTwitter}>Twitter</Button>
-        <Button inverted color='orange' onClick={this.props.onClickContentful}>CMS</Button>
-        <Button inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Computer Gigs</Button>
-        <Button inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Event Gigs</Button>
+        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClickCraigslist}>CraigsList</button>
+        <button className='btn btn-default btn-md' inverted color='red' onClick={this.props.onClickInstagram}>Instagram</button>
+        <button className='btn btn-default btn-md' inverted color='blue' onClick={this.props.onClickTwitter}>Twitter</button>
+        <button className='btn btn-default btn-md' inverted color='orange' onClick={this.props.onClickContentful}>CMS</button>
+        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Computer Gigs</button>
+        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Event Gigs</button>
       </div>
     )
   }
