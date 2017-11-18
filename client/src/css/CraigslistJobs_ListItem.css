@@ -1,0 +1,18 @@
+.listing-title {
+  color: black;
+}
+
+#testing {
+  color: blue;
+}
+
+.panel-heading {
+  padding: 1px 1px;
+  background-color: white !important;
+}
+
+.panel-body-img {
+  padding-top: 15px;
+  height: 65px;
+  width: 65px
+}

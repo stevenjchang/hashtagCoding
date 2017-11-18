@@ -4,7 +4,7 @@ import CraigslistJobs_ListItem from './CraigslistJobs_ListItem'
 const CraigslistJobs_List = ({ list }) => {
   let renderedList = list ? list : [];
   return (
-    <div className='container'>
+    <div className='container-fluid'>
       {renderedList.map((item, i) => {
         if (item.show) {
           return (
