@@ -37,19 +37,28 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'babel-loader', 
         query: {
           presets: ['es2015', 'react', 'stage-1']
         }
       },
       {
-        test: /\.less/,
-        loader: 'style!css!less',
-      },
-      {
         test: /\.(png|jpg|gif|woff|svg|eot|ttf|woff2)$/,
         loader: 'url-loader?limit=1024&name=[name]-[hash:8].[ext]!image-webpack',
       },
+      {
+        test: /\.css$/,
+        rules: [
+          {
+            use: [
+              "style-loader",
+              "css-loader"
+            ]
+    
+          }
+        ]
+      }
+   
     ],
   },
   // target: "node"
