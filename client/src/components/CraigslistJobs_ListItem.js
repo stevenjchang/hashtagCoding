@@ -3,7 +3,7 @@ import '../css/CraigslistJobs_ListItem.css'
 
 const CraigslistJobs_ListItem = ({ item, toggleShowHide }) => {
   return (
-    <div className="col-md-8">
+    <div className="col-md-7">
 
       <div className="col-md-2">
       {(item.images) ? <img className="panel-body-img" src={'https://images.craigslist.org/' + item.images.split(',')[0].substring(2) + '_300x300.jpg'} /> : <img className="panel-body-img" src="http://via.placeholder.com/65x65" />}
@@ -11,11 +11,11 @@ const CraigslistJobs_ListItem = ({ item, toggleShowHide }) => {
 
       <div className="panel panel-primary col-md-10">
         <div className="panel-heading">
-          <a href={item.href}>
-            <h7 className="panel-title listing-title">
-              {item.title} <span style={{"color": "black", "font-style": "italic", "font-size": ".70em"}}> ~ ( {item.neighborhood ? item.neighborhood : "no location"} )
+          <a href={item.href} target="_blank">
+            <p className="panel-title listing-title">
+              {item.title} <span className="listing-title-neighborhood"> ~ ( {item.neighborhood ? item.neighborhood : "no location"} )
               </span>
-            </h7>
+            </p>
           </a>
         </div>
 

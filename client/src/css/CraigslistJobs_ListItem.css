@@ -1,5 +1,6 @@
 .listing-title {
   color: black;
+  font-size: 14px;
 }
 
 #testing {
@@ -14,5 +15,11 @@
 .panel-body-img {
   padding-top: 15px;
   height: 65px;
-  width: 65px
+  width: 65px;
+}
+
+.listing-title-neighborhood {
+  color: black;
+  font-style: italic;
+  font-size: .70em;
 }
