@@ -9,7 +9,7 @@ class ButtonMenu extends React.Component {
   }
   render() {
     return (
-      <div className='text-center'  style={{marginBottom: '75px'}}>
+      <div className='text-center' style={{marginBottom:'35px', marginTop:'25px'}}>
         <button className='btn btn-default btn-sm' inverted color='purple' onClick={this.props.onClickCraigslist}>CraigsList</button>
         <button className='btn btn-default btn-sm' inverted color='red' onClick={this.props.onClickInstagram}>Instagram</button>
         <button className='btn btn-default btn-sm' inverted color='blue' onClick={this.props.onClickTwitter}>Twitter</button>
