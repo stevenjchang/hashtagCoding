@@ -7,7 +7,6 @@
     "dev": "webpack -d --watch",
     "build": "webpack -p",
     "start": "node server/index.js",
-    "postinstall": "webpack",
     "test": "jest",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --content-base ./"
   },
