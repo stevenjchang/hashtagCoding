@@ -6,9 +6,12 @@ const { scrapeCraigslist } = scraper.craigslist;
 
 const urlAddress = 'https://sfbay.craigslist.org/search/cto?hasPic=1&min_price=2500&max_price=6000&min_auto_year=2005&auto_title_status=1';
 
-const urlAddressJobs = (jobType , jobCategory = 'cpg', jobCity = 'sfc') => {
-  return ('https://sfbay.craigslist.org/search/' + jobCity + '/'
-+ jobCategory);
+const urlAddressJobs = (jobType , jobCategory = 'cpg', jobCity) => {
+  if (jobCity) {
+    return ('https://sfbay.craigslist.org/search/' + jobCity + '/' + jobCategory);
+  } else {
+    return ('https://sfbay.craigslist.org/search/' + jobCategory); 
+  }
 };
 
 const getCraigslistFeed = (req, res) => {
@@ -71,7 +74,7 @@ const toggleCraigslistShowHide = (req, res) => {
 
 const getCraigslistJobs = (req, res) => {
   let { jobType, jobCategory, jobCity } = req.body;
-  axios.get(urlAddressJobs('blank', 'evg'))
+  axios.get(urlAddressJobs())
     .then(result => {
       return scrapeCraigslist(result.data)
     })
@@ -98,6 +101,12 @@ const getCraigslistJobs = (req, res) => {
 
     })
     .catch(err => console.log('Error! in axios / get urlAddresJobs - craigslist.js =>', err))
+}
+
+const getCraigslistJobs2 = (req, res) => {
+  db('job_listing').orderBy('dateTime', 'desc')
+    .then(jobList => res.send(jobList))  
+    .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err))
 }
 
 module.exports.getCraigslistFeed = getCraigslistFeed;
