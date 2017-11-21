@@ -9,13 +9,13 @@ class ButtonMenu extends React.Component {
   }
   render() {
     return (
-      <div>
-        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClickCraigslist}>CraigsList</button>
-        <button className='btn btn-default btn-md' inverted color='red' onClick={this.props.onClickInstagram}>Instagram</button>
-        <button className='btn btn-default btn-md' inverted color='blue' onClick={this.props.onClickTwitter}>Twitter</button>
-        <button className='btn btn-default btn-md' inverted color='orange' onClick={this.props.onClickContentful}>CMS</button>
-        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Computer Gigs</button>
-        <button className='btn btn-default btn-md' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Event Gigs</button>
+      <div className='text-center'  style={{marginBottom: '75px'}}>
+        <button className='btn btn-default btn-sm' inverted color='purple' onClick={this.props.onClickCraigslist}>CraigsList</button>
+        <button className='btn btn-default btn-sm' inverted color='red' onClick={this.props.onClickInstagram}>Instagram</button>
+        <button className='btn btn-default btn-sm' inverted color='blue' onClick={this.props.onClickTwitter}>Twitter</button>
+        <button className='btn btn-default btn-sm' inverted color='orange' onClick={this.props.onClickContentful}>CMS</button>
+        <button className='btn btn-default btn-sm' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Computer Gigs</button>
+        <button className='btn btn-default btn-sm' inverted color='purple' onClick={this.props.onClick_getCraigslistJobs}>CL Event Gigs</button>
       </div>
     )
   }
