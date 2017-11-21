@@ -22,6 +22,8 @@ app.get('/craigslist_scraper', api.craigslist_scraper.getCraigslistScrapper);
 app.get('/links', api.links.getLinksFromDb);
 app.post('/links', api.links.postLinksToDb);
 
+app.get('/test', console.log('test route at server/index successful'));
+
 app.listen(PORT, (err) => {  
   if (err) { return console.log('failure at app.listen in server/index =>', err) }
   console.log(`server is listening on ${PORT}`)
