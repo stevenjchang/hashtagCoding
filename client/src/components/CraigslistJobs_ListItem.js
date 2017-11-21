@@ -3,7 +3,7 @@ import '../css/CraigslistJobs_ListItem.css'
 
 const CraigslistJobs_ListItem = ({ item, toggleShowHide }) => {
   return (
-    <div className="col-md-7">
+    <div className="col-md-7 col-md-offset-2">
 
       <div className="col-md-2">
       {(item.images) ? <img className="panel-body-img" src={'https://images.craigslist.org/' + item.images.split(',')[0].substring(2) + '_300x300.jpg'} /> : <img className="panel-body-img" src="http://via.placeholder.com/65x65" />}
