@@ -37,6 +37,7 @@
     "body-parser": "^1.18.2",
     "cheerio": "^1.0.0-rc.2",
     "contentful": "^4.6.2",
+    "dotenv": "^4.0.0",
     "express": "^4.15.3",
     "htmlparser2": "^3.9.2",
     "knex": "^0.13.0",
