@@ -1,0 +1,25 @@
+.listing-title {
+  color: black;
+  font-size: 14px;
+}
+
+#testing {
+  color: blue;
+}
+
+.panel-heading {
+  padding: 1px 1px;
+  background-color: white !important;
+}
+
+.panel-body-img {
+  padding-top: 15px;
+  height: 65px;
+  width: 65px;
+}
+
+.listing-title-neighborhood {
+  color: black;
+  font-style: italic;
+  font-size: .70em;
+}

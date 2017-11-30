@@ -1,22 +1,34 @@
 import React from 'react'
-import { Card, Icon, Image } from 'semantic-ui-react'
+import '../css/CraigslistJobs_ListItem.css'
 
 const CraigslistJobs_ListItem = ({ item, toggleShowHide }) => {
   return (
-    <Card.Group>
-      <Card fluid={true}>
-        <Card.Content>
-          <h3>{item.title}</h3>
-          <p>{item.neighborhood} ~ <span style={{color: "red"}}>{item.price}</span></p>
-          {(item.images) ? <Image src={'https://images.craigslist.org/' + item.images.split(',')[0].substring(2) + '_300x300.jpg'}></Image> : <p>No image</p>}
-          <a href={item.href}><p>link</p></a>
-          <p>id: {item.id} </p>
-          <p>showStatus: {item.show.toString()}</p>
-          <button onClick={() => toggleShowHide(item.id, item.show)}>Hide Post</button>
-          <br></br>
-        </Card.Content>
-      </Card>
-    </Card.Group>
+    <div className="col-md-7 col-md-offset-2">
+
+      <div className="col-md-2">
+      {(item.images) ? <img className="panel-body-img" src={'https://images.craigslist.org/' + item.images.split(',')[0].substring(2) + '_300x300.jpg'} /> : <img className="panel-body-img" src="http://via.placeholder.com/65x65" />}
+      </div>
+
+      <div className="panel panel-primary col-md-10">
+        <div className="panel-heading">
+          <a href={item.href} target="_blank">
+            <p className="panel-title listing-title">
+              {item.title} <span className="listing-title-neighborhood"> ~ ( {item.neighborhood ? item.neighborhood : "no location"} )
+              </span>
+            </p>
+          </a>
+        </div>
+
+        <div className="panel-body block">
+          <span className="pull-right">
+          <button className="btn btn-success btn-xs">Save Job</button>
+          <button className="btn btn-danger btn-xs" onClick={() => toggleShowHide(item.id, item.show)}>Hide Job</button>
+          </span>
+          {/* <button className="btn btn-sucess btn-xs">Show </button> */}
+        </div>
+        
+      </div>
+    </div>
   )
 }
 
