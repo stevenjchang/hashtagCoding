@@ -14,6 +14,7 @@ module.exports = {
   watch: true,
   node: {
     __dirname: true,
+    fs: "empty"
   },
   devServer: {
     hot: true,

@@ -1,12 +1,12 @@
 const Instagram = require('node-instagram').default
 const fs = require('../fs')
-const ENV = require('../../../apikey.json')
+require('dotenv').config()
 
 // Create a new instance. 
 const instagram = new Instagram({
-  clientId: ENV.CLIENT_ID,
-  clientSecret: ENV.CLIENT_SECRET,
-  accessToken: ENV.ACCESS_TOKEN,
+  clientId: process.env.CLIENT_ID,
+  clientSecret: process.env.CLIENT_SECRET,
+  accessToken: process.env.ACCESS_TOKEN,
 });
 
 const getInstagramUserImages = (req, res) => {
@@ -20,4 +20,4 @@ const getInstagramUserImages = (req, res) => {
   });
 }
 
-module.exports = { getInstagramUserImages: getInstagramUserImages}
+module.exports = { getInstagramUserImages }
