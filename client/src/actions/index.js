@@ -1,8 +1,7 @@
 import axios from 'axios'
-import client from '../../../contentful.config.js'
 
 export const getContentfulFeed = (dispatch) => {
-  return dispatch => client.getEntries({content_type: 'links'})
+  return dispatch => axios.get('/contentful')
     .then(res => res.items)
     .then(
       data => dispatch({ type: 'GET_CONTENTFUL_FEED', data }),

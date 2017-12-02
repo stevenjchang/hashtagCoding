@@ -1,9 +1,9 @@
 import {createClient} from 'contentful'
-import ENV from './apikey.json'
+require('dotenv').config()
 
 const client = createClient({
-  space: ENV.CONTENTFUL_SPACE_ID,
-  accessToken: ENV.CONTENTFUL_DELIVERY_API
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_DELIVERY_API
 })
 
 export default client

@@ -7,7 +7,6 @@ const PORT = process.env.PORT || '3000'
 const app = express()  
 const bodyParser = require('body-parser');
 const api = require('../server/helpers/api')
-const dummyData = require('../database/dummyData').dummyData
 const db = require('./db')
 
 app.use(express.static(path.join(__dirname, '../public')));
@@ -28,4 +27,4 @@ app.listen(PORT, (err) => {
   console.log(`server is listening on ${PORT}`)
 })
 
-module.exports.app = app;
+module.exports = app;

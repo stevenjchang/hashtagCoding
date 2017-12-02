@@ -14,6 +14,7 @@ module.exports = {
   watch: true,
   node: {
     __dirname: true,
+    fs: "empty"
   },
   devServer: {
     hot: true,
@@ -64,7 +65,7 @@ module.exports = {
   // target: "node"
   plugins: [  
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
     devFlagPlugin
   ],
 };  
