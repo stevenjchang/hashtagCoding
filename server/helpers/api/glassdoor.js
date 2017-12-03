@@ -16,15 +16,30 @@ const getGlassdoorJobs = (req, res) => {
         let info = $(element).find('.infoSalEst');
         jobList[index] = {};
         jobList[index]['href'] = urlPrefix + $(jobLink).attr('href');
-        jobList[index]['employer'] = $(info).attr('data-employer-shortname');
-        jobList[index]['jobtitle'] = $(info).attr('data-jobtitle');
+        jobList[index]['company'] = $(info).attr('data-employer-shortname');
+        jobList[index]['title'] = $(info).attr('data-jobtitle');
         jobList[index]['pid'] = $(info).attr('data-job-id');
         jobList[index]['location'] = $(element).find('.empLoc').find('.loc').text();
+        jobList[index]['site'] = 'glassdoor';
+        jobList[index]['show'] = true;
       })
       return jobList;
     })
     .then(sortedData => {
-      res.send(sortedData);
+      sortedData.map((item, i) => {
+        let { pid = '', title = '', company = '', href = '', location = '', site = 'glassdoor', show = '' } = item;
+        db.raw(
+          'INSERT INTO job_listing (pid, title, company, href, location, site, show) VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
+          [ pid, title, company, href, location, site, show ]
+        )
+        .catch(err => console.log('Error! in db.raw in glassdoor.js =>', err))
+      })
+      return [];
+    })
+    .then(placeholderValue => {
+      db('job_listing').orderBy('dateTime', 'desc')
+        .then(jobList => res.send(jobList))
+        .catch(err => console.log('Error! in db job_listing - glassdoor.js =>', err))
     })
     .catch(err => console.log('Error! in getGlassdoorJobs - api/glassdoor.js =>', err))
 }
