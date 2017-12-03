@@ -5,7 +5,7 @@ class ButtonMenu extends React.Component {
     super(props)
   }
   componentDidMount() {
-    this.props.onClick_getCraigslistJobs();
+    this.props.onClickGetJobs();
   }
   render() {
     return (

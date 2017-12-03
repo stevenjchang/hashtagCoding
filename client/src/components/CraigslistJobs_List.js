@@ -8,7 +8,7 @@ const CraigslistJobs_List = ({ list }) => {
       {renderedList.map((item, i) => {
         if (item.show) {
           return (
-              <CraigslistJobs_ListItem item={item} key={i}/>
+            <CraigslistJobs_ListItem item={item} key={i}/>
           )}
       })}
     </div>

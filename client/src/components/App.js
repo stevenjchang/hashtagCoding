@@ -3,8 +3,9 @@ import ButtonMenu from '../containers/ButtonMenu'
 import Contentful from '../containers/Contentful'
 import Craigslist from './../containers/Craigslist'
 import CraigslistJobs from './../containers/CraigslistJobsContainer'
-import Menubar from './MenuBar'
 import Instagram from '../containers/Instagram'
+import Jobs from '../containers/JobsContainer'
+import Menubar from './MenuBar'
 import Twitter from './../containers/Twitter'
 
 const App = () => (
@@ -14,6 +15,7 @@ const App = () => (
     <Contentful />
     <Instagram />
     <Twitter />
+    <Jobs />
     <Craigslist />
     <CraigslistJobs />
   </div>

@@ -55,3 +55,12 @@ export const getCraigslistJobs = (jobType, jobCategory) => {
       err  => dispatch({ type: 'GET_CRAIGSLIST_JOBS_ERROR', err})
     )
 }
+
+export const getJobs = () => {
+  return dispatch => axios.get('/glassdoor/jobs')
+    .then(res => res)
+    .then(
+      data => dispatch({ type: 'GET_JOBS', data}),
+      err => dispatch({ type: 'GET_JOBS_ERROR', err})
+    )
+}
