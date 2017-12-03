@@ -1,7 +1,6 @@
 
 exports.up = function(knex, Promise) {
   return Promise.all([
-
     knex.schema.createTable('car_listing', function(table) {
       table.increments('id').primary();
       table.string('pid').unique();
@@ -14,7 +13,6 @@ exports.up = function(knex, Promise) {
       table.boolean('show');
       table.dateTime('dateTime');
     })
-
   ])
 };
 
