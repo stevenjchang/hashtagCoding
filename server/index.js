@@ -19,6 +19,7 @@ app.get('/craigslist', api.craigslist.getCraigslistFeed);
 app.post('/craigslist/toggle_post/:id', api.craigslist.toggleCraigslistShowHide);
 app.get('/craigslist/jobs', api.craigslist.getCraigslistJobs);
 app.get('/craigslist_scraper', api.craigslist_scraper.getCraigslistScrapper);
+app.get('/glassdoor/jobs', api.glassdoor.getGlassdoorJobs);
 app.get('/links', api.links.getLinksFromDb);
 app.post('/links', api.links.postLinksToDb);
 
