@@ -32,6 +32,7 @@ const JobListItem = ({ item, toggleShowHide }) => {
         </div>
 
         <div className="panel-body block">
+          <span className="listing-site"> {item.site} </span>
           <span className="pull-right">
             <button className="btn btn-success btn-xs">Save Job</button>
             <button

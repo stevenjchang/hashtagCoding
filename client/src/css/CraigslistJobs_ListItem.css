@@ -27,3 +27,9 @@
 .listing-company {
   font-size: .85em;
 }
+
+.listing-site {
+  font-size: .90em;
+  color: gray;
+  font-style: italic;
+}
