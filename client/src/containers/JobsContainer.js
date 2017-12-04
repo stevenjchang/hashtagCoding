@@ -1,24 +1,24 @@
-import { connect } from 'react-redux'
-import { getJobs } from '../actions'
-import JobList from '../components/JobList'
+import { connect } from 'react-redux';
+import { getJobs } from '../actions';
+import JobList from '../components/JobList';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    list: state.jobs
-  }
-}
+    list: state.jobs,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onClickGetJobs: () => {
-      dispatch(getJobs())
-    }
-  }
-}
+      dispatch(getJobs());
+    },
+  };
+};
 
 const JobsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(JobList)
+  mapDispatchToProps,
+)(JobList);
 
-export default JobsContainer
+export default JobsContainer;

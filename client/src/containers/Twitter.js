@@ -1,22 +1,22 @@
-import { connect } from 'react-redux'
-import { getTwitterFeed } from '../actions'
-import TwitterList from '../components/TwitterList'
+import { connect } from 'react-redux';
+import { getTwitterFeed } from '../actions';
+import TwitterList from '../components/TwitterList';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    images: state.twitter
-  }
-}
+    images: state.twitter,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonClick: () => dispatch(getTwitterFeed())
-  }
-}
+    onButtonClick: () => dispatch(getTwitterFeed()),
+  };
+};
 
 const Twitter = connect(
-  mapStateToProps, 
-  mapDispatchToProps
-)(TwitterList)
+  mapStateToProps,
+  mapDispatchToProps,
+)(TwitterList);
 
-export default Twitter
+export default Twitter;

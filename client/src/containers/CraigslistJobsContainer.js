@@ -1,24 +1,24 @@
-import { connect } from 'react-redux'
-import { getCraigslistJobs } from '../actions'
-import CraigslistJobs_List from '../components/CraigslistJobs_List'
+import { connect } from 'react-redux';
+import { getCraigslistJobs } from '../actions';
+import CraigslistJobsList from '../components/CraigslistJobsList';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    list: state.craigslistJobs
-  }
-}
+    list: state.craigslistJobs,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onClick_getCraigslistJobs: (jobType, jobCategory) => {
-      dispatch(getCraigslistJobs(jobType, jobCategory))
-    }
-  }
-}
+      dispatch(getCraigslistJobs(jobType, jobCategory));
+    },
+  };
+};
 
 const CraigslistJobsContainer = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(CraigslistJobs_List)
+  mapDispatchToProps,
+)(CraigslistJobsList);
 
-export default CraigslistJobsContainer
+export default CraigslistJobsContainer;

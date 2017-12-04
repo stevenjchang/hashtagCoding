@@ -1,12 +1,12 @@
 const instagram = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'GET_INSTAGRAM_FEED':
       return [
-        action.data.data
-      ]
+        action.data.data,
+      ];
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default instagram
+export default instagram;

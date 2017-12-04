@@ -1,22 +1,22 @@
-import { connect } from 'react-redux'
-import { getInstagramFeed } from '../actions'
-import InstagramList from '../components/InstagramList'
+import { connect } from 'react-redux';
+import { getInstagramFeed } from '../actions';
+import InstagramList from '../components/InstagramList';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    images: state.instagram
-  }
-}
+    images: state.instagram,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonClick: () => dispatch(getInstagramFeed())
-  }
-}
+    onButtonClick: () => dispatch(getInstagramFeed()),
+  };
+};
 
 const Instagram = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(InstagramList)
+  mapDispatchToProps,
+)(InstagramList);
 
-export default Instagram
+export default Instagram;

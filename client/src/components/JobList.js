@@ -1,18 +1,15 @@
-import React from 'react'
-import JobListItem from './JobListItem'
+import React from 'react';
+import JobListItem from './JobListItem';
 
 const JobList = ({ list }) => {
-  console.log('list', list)
-  let renderedList = list ? list : [];
+  const renderedList = list || [];
   return (
     <div>
-      {renderedList.map((item, i) => {
-        return (
-          <JobListItem item={item} key={i} />
-        )
-      })}
+      {renderedList.map((item, i) => (
+        <JobListItem item={item} key={i} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default JobList
+export default JobList;

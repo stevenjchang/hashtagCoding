@@ -1,12 +1,12 @@
 const contentful = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'GET_CONTENTFUL_FEED':
       return [
-        action.data
-      ]
+        action.data,
+      ];
     default:
-      return state
+      return state;
   }
-}
+};
 
-export default contentful
+export default contentful;

@@ -1,12 +1,12 @@
-import React from 'react'
-import ButtonMenu from '../containers/ButtonMenu'
-import Contentful from '../containers/Contentful'
-import Craigslist from './../containers/Craigslist'
-import CraigslistJobs from './../containers/CraigslistJobsContainer'
-import Instagram from '../containers/Instagram'
-import Jobs from '../containers/JobsContainer'
-import Menubar from './MenuBar'
-import Twitter from './../containers/Twitter'
+import React from 'react';
+import ButtonMenu from '../containers/ButtonMenu';
+import Contentful from '../containers/Contentful';
+import Craigslist from './../containers/Craigslist';
+import CraigslistJobs from './../containers/CraigslistJobsContainer';
+import Instagram from '../containers/Instagram';
+import Jobs from '../containers/JobsContainer';
+import Menubar from './MenuBar';
+import Twitter from './../containers/Twitter';
 
 const App = () => (
   <div>
@@ -19,6 +19,6 @@ const App = () => (
     <Craigslist />
     <CraigslistJobs />
   </div>
-)
+);
 
-export default App
+export default App;

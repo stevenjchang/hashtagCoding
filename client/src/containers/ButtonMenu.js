@@ -1,27 +1,27 @@
-import { connect } from 'react-redux'
-import { getContentfulFeed, getCraigslistFeed, getCraigslistJobs, getInstagramFeed, getJobs, getTwitterFeed } from '../actions'
-import ButtonMenu from '../components/ButtonMenu'
+import { connect } from 'react-redux';
+import { getContentfulFeed, getCraigslistFeed, getCraigslistJobs, getInstagramFeed, getJobs, getTwitterFeed } from '../actions';
+import ButtonMenu from '../components/ButtonMenu';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
 
-  }
-}
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onClickContentful: () => dispatch(getContentfulFeed()),
     onClickCraigslist: () => dispatch(getCraigslistFeed()),
     onClick_getCraigslistJobs: () => dispatch(getCraigslistJobs()),
     onClickInstagram: () => dispatch(getInstagramFeed()),
     onClickGetJobs: () => dispatch(getJobs()),
-    onClickTwitter: () => dispatch(getTwitterFeed())
-  }
-}
+    onClickTwitter: () => dispatch(getTwitterFeed()),
+  };
+};
 
 const Button = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(ButtonMenu)
+  mapDispatchToProps,
+)(ButtonMenu);
 
-export default Button
+export default Button;
