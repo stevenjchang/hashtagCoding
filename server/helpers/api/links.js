@@ -1,25 +1,25 @@
-const db = require('../../db')
+const db = require('../../db');
 
 const getLinksFromDb = (req, res) => {
   db('links')
     .select().timeout(2000)
-    .then((result) => res.send(result))
-}
+    .then(result => res.send(result));
+};
 
 const postLinksToDb = (req, res) => {
-  let info = req.body;
+  const info = req.body;
 
   db('links')
     .insert({
-      name: info.name, 
+      name: info.name,
       title: info.title,
       url: info.url,
       type: info.type,
-      image: info.image
+      image: info.image,
     })
-    .then((result) => { res.send(result) })
-    .catch((error) => { console.log('*** error! in postLinksToDb') })
-}
+    .then(result => res.send(result))
+    .catch(err => console.log('*** error! in postLinksToDb', err));
+};
 
 module.exports.getLinksFromDb = getLinksFromDb;
 module.exports.postLinksToDb = postLinksToDb;

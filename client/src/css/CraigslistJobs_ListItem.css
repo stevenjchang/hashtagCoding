@@ -18,8 +18,18 @@
   width: 65px;
 }
 
-.listing-title-neighborhood {
+.listing-title-location {
   color: black;
   font-style: italic;
   font-size: .70em;
+}
+
+.listing-company {
+  font-size: .85em;
+}
+
+.listing-site {
+  font-size: .90em;
+  color: gray;
+  font-style: italic;
 }

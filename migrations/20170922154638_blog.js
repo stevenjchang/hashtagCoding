@@ -1,6 +1,5 @@
 exports.up = function(knex, Promise) {
   return Promise.all([
-
       knex.schema.createTable('users', function(table) {
           table.increments('uid').primary();
           table.string('username');
@@ -9,7 +8,6 @@ exports.up = function(knex, Promise) {
           table.string('email');
           table.timestamps();
       }),
-
       knex.schema.createTable('posts', function(table){
           table.increments('id').primary();
           table.string('title');
@@ -19,7 +17,6 @@ exports.up = function(knex, Promise) {
                 .inTable('users');
           table.dateTime('postDate');
       }),
-
       knex.schema.createTable('comments', function(table){
           table.increments('id').primary();
           table.string('body');
@@ -31,7 +28,6 @@ exports.up = function(knex, Promise) {
                 .inTable('posts');
           table.dateTime('postDate');
       }),
-
       knex.schema.createTable('links', function(table){
           table.increments('id').primary();
           table.string('name');
@@ -41,7 +37,6 @@ exports.up = function(knex, Promise) {
           table.string('type');
           table.dateTime('postDate');
       })
-      
   ])
 };
 

@@ -6,21 +6,19 @@ const { scrapeCraigslist } = scraper.craigslist;
 
 const urlAddress = 'https://sfbay.craigslist.org/search/cto?hasPic=1&min_price=2500&max_price=6000&min_auto_year=2005&auto_title_status=1';
 
-const urlAddressJobs = (jobType , jobCategory = 'cpg', jobCity) => {
+const urlAddressJobs = (jobType, jobCategory = 'cpg', jobCity) => {
   if (jobCity) {
-    return ('https://sfbay.craigslist.org/search/' + jobCity + '/' + jobCategory);
-  } else {
-    return ('https://sfbay.craigslist.org/search/' + jobCategory); 
+    return (`https://sfbay.craigslist.org/search/, ${jobCity}, /, ${jobCategory}`);
   }
+  return (`https://sfbay.craigslist.org/search/, ${jobCategory}`);
 };
 
 const getCraigslistFeed = (req, res) => {
   axios.get(urlAddress)
-    .then(result => {
-
+    .then((result) => {
       const $ = cheerio.load(result.data);
       const carList = [];
-      $('.result-row').each(function(index, element){
+      $('.result-row').each((index, element) => {
         carList[index] = {};
         let resultImage = $(element).find('.result-image');
         carList[index]['pid'] = $(this).attr('data-pid');
@@ -36,78 +34,70 @@ const getCraigslistFeed = (req, res) => {
         let neighborhoodCleanText = $(neighborhood).text().substring(2, $(neighborhood).text().length - 1);
         carList[index]['neighborhood'] = neighborhoodCleanText;
         carList[index]['show'] = true;
-      })
+      });
       return carList;
-
     })
-    .then(sortedData => {
+    .then((sortedData) => {
       sortedData.map((item, i) => {
-        let { pid, title, href, images, price, neighborhood, dateTime, show } = item;
-
+        const { pid, title, href, images, price, neighborhood, dateTime, show } = item;
         db.raw(
-          'INSERT INTO car_listing (pid, title, href, images, price, neighborhood, "dateTime", show) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
-          [ pid, title, href, images, price, neighborhood, dateTime, show ]
-        ).catch(err => console.log('Error! in db.raw - craigslist.js =>', err))
-
+          'INSERT INTO car_listing (pid, title, href, images, price, neighborhood, "dateTime", show) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING',
+          [pid, title, href, images, price, neighborhood, dateTime, show],
+        ).catch(err => console.log('Error! in db.raw - craigslist.js =>', err));
       })
       return [];
     })
-    .then(placeholderValue => {
-
+    .then((placeholderValue) => {
       db('car_listing').orderBy('dateTime', 'desc')
-        .then(carList => res.send(carList))  
-        .catch(err => console.log('Error! in db car_listing - craigslist.js =>', err))
-
+        .then(carList => res.send(carList))
+        .catch(err => console.log('Error! in db car_listing - craigslist.js =>', err));
     })
-    .catch(err => console.log('Error! in axios / get urlAddress - craigslist.js =>', err))
-}
+    .catch(err => console.log('Error! in axios / get urlAddress - craigslist.js =>', err));
+};
 
 const toggleCraigslistShowHide = (req, res) => {
-  db('car_listing').where('id', '=', req.params.id).update({show: !req.body.showStatus})
-    .then(result => {
+  db('car_listing').where('id', '=', req.params.id).update({ show: !req.body.showStatus })
+    .then((result) => {
       db('car_listing').where('id', '=', req.params.id).select()
-        .then(postSuccess => console.log('Posting Successful in toggleCraigslistShowHide =>', postSuccess))
+        .then(postSuccess => console.log('Posting Successful in toggleCraigslistShowHide =>', postSuccess));
       res.send('success')
     })
-    .catch(err => console.log('Error! in toggleCraigslistShowHide =>', err))
-}
+    .catch(err => console.log('Error! in toggleCraigslistShowHide =>', err));
+};
 
 const getCraigslistJobs = (req, res) => {
-  let { jobType, jobCategory, jobCity } = req.body;
+  const { jobType, jobCategory, jobCity } = req.body;
   axios.get(urlAddressJobs())
-    .then(result => {
-      return scrapeCraigslist(result.data)
+    .then((result) => {
+      return scrapeCraigslist(result.data);
     })
-    .then(sortedData => {
+    .then((sortedData) => {
       sortedData.map((item, i) => {
         let { pid, title, href, images, price, neighborhood, site, favorite, note, show, dateTime } = item;
         images = images || '';
-        neighborhood = neighborhood || ''
+        neighborhood = neighborhood || '';
         db.raw(
-          'INSERT INTO job_listing (pid, title, href, images, neighborhood, show, "dateTime") VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING', 
-          [ pid, title, href, images, neighborhood, show, dateTime ]
+          'INSERT INTO job_listing (pid, title, href, images, neighborhood, show, "dateTime") VALUES (?, ?, ?, ?, ?, ?, ?) ON CONFLICT DO NOTHING',
+          [pid, title, href, images, neighborhood, show, dateTime],
         )
-        .then(res => res)
-        .catch(err =>
-          console.log('Error! in db raw getCraigslistJobs =>', err)
-        )
-      })
+          .then(result => result)
+          .catch(err => console.log('Error! in db raw getCraigslistJobs =>', err));
+      });
       return [];
     })
-    .then(placeholderValue => {
+    .then((placeholderValue) => {
       db('job_listing').orderBy('dateTime', 'desc')
-        .then(jobList => res.send(jobList))  
-        .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err))
-
+        .then(jobList => res.send(jobList))
+        .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err));
     })
-    .catch(err => console.log('Error! in axios / get urlAddresJobs - craigslist.js =>', err))
-}
+    .catch(err => console.log('Error! in axios / get urlAddresJobs - craigslist.js =>', err));
+};
 
 const getCraigslistJobs2 = (req, res) => {
   db('job_listing').orderBy('dateTime', 'desc')
-    .then(jobList => res.send(jobList))  
-    .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err))
-}
+    .then(jobList => res.send(jobList))
+    .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err));
+};
 
 module.exports.getCraigslistFeed = getCraigslistFeed;
 module.exports.getCraigslistJobs = getCraigslistJobs;

@@ -1,22 +1,22 @@
-import { connect } from 'react-redux'
-import { getContentfulFeed } from '../actions'
-import ContentfulList from '../components/ContentfulList'
+import { connect } from 'react-redux';
+import { getContentfulFeed } from '../actions';
+import ContentfulList from '../components/ContentfulList';
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    links: state.contentful
-  }
-}
+    links: state.contentful,
+  };
+};
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    onButtonClick: () => dispatch(getContentfulFeed())
-  }
-}
+    onButtonClick: () => dispatch(getContentfulFeed()),
+  };
+};
 
 const Contentful = connect(
   mapStateToProps,
-  mapDispatchToProps
-)(ContentfulList)
+  mapDispatchToProps,
+)(ContentfulList);
 
-export default Contentful
+export default Contentful;

@@ -1,1 +1,1 @@
-module.exports.writeDummyData = require('./writeDummyData')
+module.exports.writeDummyData = require('./writeDummyData');

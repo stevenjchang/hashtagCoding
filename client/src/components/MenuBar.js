@@ -1,18 +1,18 @@
-import React from 'react'
-import { Menu, Segment } from 'semantic-ui-react'
+import React from 'react';
+// import { Menu, Segment } from 'semantic-ui-react';
 
 class MenuBar extends React.Component {
   constructor(props) {
-    super(props) 
-    this.state = { activeItem: 'home' }
+    super(props);
+    this.state = { activeItem: 'home' };
   }
 
   handleItemClick(e, { name }) {
-    this.setState({ activeItem: name })
+    this.setState({ activeItem: name });
   }
 
   render() {
-    const { activeItem } = this.state
+    const { activeItem } = this.state;
     // return (
     //   <Segment inverted color='blue'>
     //     <Menu inverted secondary color='blue' inverted widths={7}>
@@ -28,4 +28,4 @@ class MenuBar extends React.Component {
   }
 }
 
-export default MenuBar
+export default MenuBar;

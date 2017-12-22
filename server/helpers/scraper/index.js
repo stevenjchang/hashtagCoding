@@ -1,1 +1,1 @@
-module.exports.craigslist = require('./craigslist')
+module.exports.craigslist = require('./craigslist');

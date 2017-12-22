@@ -1,11 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Grid, Button, Image } from 'semantic-ui-react'
-import InstagramListItem from './InstagramListItem'
+import React from 'react';
+import { Grid, Button, Image } from 'semantic-ui-react';
+import InstagramListItem from './InstagramListItem';
 
 const InstagramList = ({ images }) => {
   let renderedList = images[0] ? images[0].data : [];
-  
+
   return (
     <div>
       <Grid centered={true} divided='vertically'>
@@ -15,12 +14,12 @@ const InstagramList = ({ images }) => {
               <Grid.Column>
                 <InstagramListItem image={item.images.low_resolution.url} />
               </Grid.Column>
-            )
+            );
           })}
         </Grid.Row>
       </Grid>
     </div>
-  )
-}
+  );
+};
 
-export default InstagramList
+export default InstagramList;

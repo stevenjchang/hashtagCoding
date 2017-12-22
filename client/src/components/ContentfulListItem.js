@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const ContentfulListItem = ({ link }) => {
   const dt = link.dateTime;
@@ -6,10 +6,10 @@ const ContentfulListItem = ({ link }) => {
   return (
     <div>
       <h2> {link.title} </h2>
-      <a href={link.url}> <img src={link.image.fields.file.url} height="350" width="500"></img> </a>
+      <a href={link.url}> <img src={link.image.fields.file.url} height="350" width="500" /></a>
       <p> posted: {date} </p>
     </div>
-  )
-}
+  );
+};
 
-export default ContentfulListItem
+export default ContentfulListItem;
