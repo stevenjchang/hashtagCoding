@@ -33,3 +33,22 @@
   color: gray;
   font-style: italic;
 }
+
+.panel-body-img-car {
+  /* max-height: 150px; */
+  /* max-width: 150px; */
+  /* height: 100px; */
+  /* width: 100px; */
+  /* object-fit: contain;
+  border-radius: 40px; */
+  max-width: 100%;
+  height: auto;
+}
+
+.img-test {
+  max-width: 100%;
+  width: auto;
+  height: 225px;
+  display: block;
+  margin: 0 auto;
+}
