@@ -18,7 +18,7 @@ const postLinksToDb = (req, res) => {
       image: info.image,
     })
     .then(result => res.send(result))
-    .catch(err => console.log('*** error! in postLinksToDb', err));
+    .catch(err => console.log('Error! in postLinksToDb', err));
 };
 
 module.exports.getLinksFromDb = getLinksFromDb;

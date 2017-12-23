@@ -10,9 +10,9 @@ const writeDummyData = (data, filename, boolean) => {
       data,
       (err, success) => {
         if (err) {
-          console.log('***Error! in writeDummyData - helpers/fs/writeFile', err);
+          console.log('Error! in writeDummyData - helpers/fs/writeFile', err);
         } else {
-          console.log('***Success! in writeDummyData, data written in: ', filename);
+          console.log('Success! in writeDummyData, data written in: ', filename);
         }
       },
     );

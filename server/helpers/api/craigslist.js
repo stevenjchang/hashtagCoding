@@ -102,6 +102,13 @@ const getCraigslistJobs2 = (req, res) => {
     .catch(err => console.log('Error! in db job_listing - craigslist.js =>', err));
 };
 
+const getFromDb = (req, res) => {
+  db('car_listing').orderBy('dateTime', 'desc')
+    .then(carList => res.send(carList))
+    .catch(err => console.log('Error! in getFromDb in helpers/api/craigslist.js =>', err))
+};
+
 module.exports.getCraigslistFeed = getCraigslistFeed;
 module.exports.getCraigslistJobs = getCraigslistJobs;
 module.exports.toggleCraigslistShowHide = toggleCraigslistShowHide;
+module.exports.getFromDb = getFromDb;

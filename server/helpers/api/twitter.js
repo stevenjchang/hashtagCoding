@@ -13,7 +13,7 @@ const twitter = new Twitter({
 //   var params = {q: '#iamanengineer OR #hackathon', count: 200, include_entities: true, lang: "en"};
 //   twitter.get('search/tweets', params, function(error, tweets, response) {
 //     if (error) {
-//       console.log('***Error! in getTwitterFeed in server/helpers/twitter =>');
+//       console.log('Error! in getTwitterFeed in server/helpers/twitter =>');
 //     } else {
 //       fs.writeDummyData(tweets, 'dummyData4.js', false)
 //       res.send(tweets);
@@ -25,7 +25,7 @@ const getTwitterFeed = (req, res) => {
   const params = { screen_name: 'TechCrunch', count: 200, include_entities: true, lang: 'en' };
   twitter.get('statuses/user_timeline', params, (error, tweets, response) => {
     if (error) {
-      console.log('***Error! in getTwitterFeed in server/helpers/twitter =>');
+      console.log('Error! in getTwitterFeed in server/helpers/twitter =>');
     } else {
       fs.writeDummyData(tweets, 'dummyData4.js', false);
       res.send(tweets);
