@@ -6,7 +6,7 @@ const createImageSourceUrl = (imageId) => {
 
 const CraigslistListItem = ({ item, toggleShowHide }) => {
   return (
-    <div>
+    <div className="container">
       <h3>{item.title}</h3>
       <p>{item.neighborhood} ~ <span style={{ color: 'red' }}>{item.price}</span></p>
       {(item.images) ?
