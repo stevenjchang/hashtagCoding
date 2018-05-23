@@ -1,4 +1,6 @@
 const Snoowrap = require('snoowrap');
+const fs = require('../fs');
+const path = require('path');
 require('dotenv').config();
 
 const getReddit = (req, res) => {
@@ -10,10 +12,18 @@ const getReddit = (req, res) => {
     refreshToken: process.env.REDDIT_REFRESH_TOKEN,
   });
 
-  r.getMe().getUpvotedContent().fetchAll().then(res1 => {
-    console.log('res *************** ==>', res1);
-    res.send(res1)
-  })
+  r.getMe().getUpvotedContent().fetchAll()
+    .then((response) => {
+      // const data = JSON.stringify(response);
+      fs.writeDummyData(response, 'redditAllUpvotedPosts.js', true);
+      // res.send(response.data)
+    });
+
+  // fs.readFile(path.join(__dirname, '../../../database/redditAllUpvotedPosts.js'), 'utf-8', (err, data) => {
+  //   console.log('hey ==>');
+  //   if (err) { console.log('*** Error! in reddit.js'); }
+  //   // res.send(JSON.stringify(data));
+  // });
 };
 
 module.exports = { getReddit };
