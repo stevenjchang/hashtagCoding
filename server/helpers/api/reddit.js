@@ -3,6 +3,8 @@ const fs = require('../fs');
 const path = require('path');
 require('dotenv').config();
 
+const redditAllUpvotedPosts = require('../../../database/redditAllUpvotedPosts.js');
+
 const getReddit = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   const r = new Snoowrap({
@@ -12,18 +14,12 @@ const getReddit = (req, res) => {
     refreshToken: process.env.REDDIT_REFRESH_TOKEN,
   });
 
-  r.getMe().getUpvotedContent().fetchAll()
-    .then((response) => {
-      // const data = JSON.stringify(response);
-      fs.writeDummyData(response, 'redditAllUpvotedPosts.js', true);
-      // res.send(response.data)
-    });
+  res.send(redditAllUpvotedPosts);
 
-  // fs.readFile(path.join(__dirname, '../../../database/redditAllUpvotedPosts.js'), 'utf-8', (err, data) => {
-  //   console.log('hey ==>');
-  //   if (err) { console.log('*** Error! in reddit.js'); }
-  //   // res.send(JSON.stringify(data));
-  // });
+  // r.getMe().getUpvotedContent().fetchAll()
+  //   .then((response) => {
+  //     fs.writeDummyData(response, 'redditAllUpvotedPosts.js', true);
+  //   });
 };
 
 module.exports = { getReddit };
