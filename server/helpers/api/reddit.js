@@ -5,7 +5,12 @@ require('dotenv').config();
 
 const redditAllUpvotedPosts = require('../../../database/redditAllUpvotedPosts.js');
 
-const getReddit = (req, res) => {
+const getSavedPosts = (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.send(redditAllUpvotedPosts.slice(0, 2000));
+};
+
+const getNewPosts = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   const r = new Snoowrap({
     userAgent: req.headers['user-agent'],
@@ -13,13 +18,24 @@ const getReddit = (req, res) => {
     clientSecret: process.env.REDDIT_CLIENT_SECRET,
     refreshToken: process.env.REDDIT_REFRESH_TOKEN,
   });
-
-  res.send(redditAllUpvotedPosts);
-
-  // r.getMe().getUpvotedContent().fetchAll()
-  //   .then((response) => {
-  //     fs.writeDummyData(response, 'redditAllUpvotedPosts.js', true);
-  //   });
+  r.getMe().getUpvotedContent().fetchAll()
+    .then((response) => {
+      res.send(response);
+    });
 };
 
-module.exports = { getReddit };
+const getAndSaveToDatabase = (req, res) => {
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  const r = new Snoowrap({
+    userAgent: req.headers['user-agent'],
+    clientId: process.env.REDDIT_CLIENT_ID,
+    clientSecret: process.env.REDDIT_CLIENT_SECRET,
+    refreshToken: process.env.REDDIT_REFRESH_TOKEN,
+  });
+  r.getMe().getUpvotedContent().fetchAll()
+    .then((response) => {
+      fs.writeDummyData(response, 'redditAllUpvotedPosts.js', true);
+    });
+};
+
+module.exports = { getNewPosts, getSavedPosts, getAndSaveToDatabase };

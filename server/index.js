@@ -23,7 +23,10 @@ app.get('/glassdoor/jobs', api.glassdoor.getGlassdoorJobs);
 app.get('/links', api.links.getLinksFromDb);
 app.post('/links', api.links.postLinksToDb);
 
-app.get('/reddit', api.reddit.getReddit);
+// TODO: implement .route
+app.get('/reddit/new', api.reddit.getNewPosts);
+app.get('/reddit', api.reddit.getSavedPosts);
+app.get('/reddit/save', api.reddit.getAndSaveToDatabase);
 
 app.listen(PORT, (err) => {
   if (err) { return console.log('failure at app.listen in server/index =>', err); }
