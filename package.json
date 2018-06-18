@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "start": "nodemon server/index.js",
+    "start": "node server/index.js",
     "test": "jest",
     "dev:hot": "webpack-dev-server --hot --inline --progress --colors --watch --content-base ./"
   },
