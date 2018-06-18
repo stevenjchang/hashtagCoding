@@ -3,11 +3,12 @@ const fs = require('../fs');
 const path = require('path');
 require('dotenv').config();
 
-const redditAllUpvotedPosts = require('../../../database/redditAllUpvotedPosts.js');
+// const redditAllUpvotedPosts = require('../../../database/redditAllUpvotedPosts.js');
 
 const getSavedPosts = (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.send(redditAllUpvotedPosts.slice(0, 2000));
+  res.send('you hit the right path');
+  // res.send(redditAllUpvotedPosts.slice(0, 2000));
 };
 
 const getNewPosts = (req, res) => {
