@@ -1,18 +1,17 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
 import CraigslistListItem from './CraigslistListItem';
 
 const CraigslistList = ({ list, onButtonClick, toggleShowHide }) => {
   const renderedList = list[0] || [];
   return (
-    <Grid centered={true} divided="vertically">
-      <Grid.Row columns={3} stretched={true} textAlign={'center'}>
+    <div className="container">
+      <div className="row">
         {renderedList.map((item, i) => {
           if (item.show) {
             return (
-              <Grid.Column key={i}>
+              <div className="col-4">
                 <CraigslistListItem item={item} key={i} toggleShowHide={toggleShowHide} />
-              </Grid.Column>
+              </div>
             );
           }
           return (
@@ -21,8 +20,8 @@ const CraigslistList = ({ list, onButtonClick, toggleShowHide }) => {
             </div>
           );
         })}
-      </Grid.Row>
-    </Grid>
+      </div>
+    </div>
   );
 };
 
